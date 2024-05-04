@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "stdio.h": "c",
+        "ranges": "c",
+        "cub3d.h": "c",
+        "array": "c",
+        "string_view": "c",
+        "float.h": "c"
+    }
+}
