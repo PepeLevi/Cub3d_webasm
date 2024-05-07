@@ -1,9 +1,9 @@
 R 
-NO tests/textures/wall.xpm
-SO tests/textures/bricks.xpm
-WE tests/textures/gold.xpm
-EA tests/textures/wood.xpm
-S tests/textures/enemy.xpm
+NO tests/textures/wall.png
+SO tests/textures/bricks.png
+WE tests/textures/gold.png
+EA tests/textures/wood.png
+S tests/textures/enemy.png
 F 220,111,119
 C 225,111,200
 

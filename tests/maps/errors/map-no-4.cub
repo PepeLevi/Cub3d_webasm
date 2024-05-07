@@ -1,6 +1,6 @@
-SO tests/textures/bricks.xpm
-WE tests/textures/gold.xpm
-EA tests/textures/wood.xpm
+SO tests/textures/bricks.png
+WE tests/textures/gold.png
+EA tests/textures/wood.png
 
 F 220,111,119
 C 225,111,200

@@ -1,10 +1,10 @@
-NO ./images/1.xpm
-SO ./images/2.xpm
-WE ./images/42.xpm
-EA ./images/3.xpm
+NO ./images/1.png
+SO ./images/2.png
+WE ./images/42.png
+EA ./images/3.png
 
-F  ./images/4.xpm
-C  ./images/4.xpm
+F  ./images/4.png
+C  ./images/4.png
 
 111111111111111111111111
 100000000000000000000001

@@ -6,7 +6,7 @@
 /*   By: lejimene <lejimene@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 16:41:48 by lejimene          #+#    #+#             */
-/*   Updated: 2024/05/04 20:19:23 by lejimene         ###   ########.fr       */
+/*   Updated: 2024/05/07 17:15:49 by lejimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	calculate_sprite_order_distance(t_data *img, t_sprite sprites[],
 	while (++i < img->num_sprites)
 	{
 		sprites[i].tex_idx = 8 + img->current_anim_frame;
-		if (!img->textures[sprites[i].tex_idx].addr)
+		if (!img->textures[sprites[i].tex_idx].img)
 		{
 			ft_printf("Error:\n Missing sprite texture\n");
 			return ;

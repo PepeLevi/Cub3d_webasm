@@ -6,7 +6,7 @@
 /*   By: lejimene <lejimene@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 17:34:09 by lejimene          #+#    #+#             */
-/*   Updated: 2024/05/04 20:20:20 by lejimene         ###   ########.fr       */
+/*   Updated: 2024/05/07 17:26:40 by lejimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ void	*tumor_anim(t_data *img, int *img_width, int *img_height)
 	char	relative_path[50];
 
 	ft_sprintf(relative_path, img->current_anim_frame + 1);
-	image = mlx_load_xpm42(relative_path);
+	image = mlx_load_png(relative_path);
 	return (image);
 }
 
@@ -104,16 +104,16 @@ void	*load_overlay_image(t_data *img, t_keys *keys, int *img_width,
 	char	*relative_path;
 
 	if (keys->q)
-		relative_path = "./images/divine.xpm";
+		relative_path = "./images/divine.png";
 	else if (keys->w || keys->s)
-		relative_path = "./images/headed2.xpm";
+		relative_path = "./images/headed2.png";
 	else if (keys->a)
-		relative_path = "./images/headedleft.xpm";
+		relative_path = "./images/headedleft.png";
 	else if (keys->d)
-		relative_path = "./images/headedright.xpm";
+		relative_path = "./images/headedright.png";
 	else
-		relative_path = "./images/headed1.xpm";
-	return (mlx_load_xpm42(relative_path));
+		relative_path = "./images/headed1.png";
+	return (mlx_load_png(relative_path));
 }
 
 void	update_image(t_data *img, t_keys *keys)
@@ -123,7 +123,7 @@ void	update_image(t_data *img, t_keys *keys)
 	void	*overlay_img[3];
 
 	overlay_img[0] = load_overlay_image(img, keys, &img_width, &img_height);
-	overlay_img[1] = mlx_load_xpm42("./images/hbhbjhb.xpm");
+	overlay_img[1] = mlx_load_png("./images/hbhbjhb.png");
 	overlay_img[2] = tumor_anim(img, &img_width, &img_height);
 	if (overlay_img != NULL)
 		sync_overlay_images(img, overlay_img, img_width, img_height);

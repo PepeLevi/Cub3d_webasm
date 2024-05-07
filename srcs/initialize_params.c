@@ -6,7 +6,7 @@
 /*   By: lejimene <lejimene@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 17:33:56 by lejimene          #+#    #+#             */
-/*   Updated: 2024/05/04 19:50:35 by lejimene         ###   ########.fr       */
+/*   Updated: 2024/05/07 17:26:10 by lejimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,6 @@ void	initialize_mlx_window(t_data *img)
 {
 	img->mlx_win = mlx_init(WIDTH, HEIGHT, "42_Yesod", true);
 	img->img = mlx_new_image(img->mlx_win, WIDTH, HEIGHT);
-	img->addr = mlx_get_data_addr(img->img, &img->bits_per_pixel,
-			&img->line_length, &img->endian);
 }
 
 void	initialize_doors(t_data *img)
