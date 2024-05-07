@@ -6,7 +6,7 @@
 /*   By: lejimene <lejimene@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/07 17:16:37 by lejimene          #+#    #+#             */
-/*   Updated: 2024/05/07 18:51:44 by lejimene         ###   ########.fr       */
+/*   Updated: 2024/05/07 19:33:23 by lejimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -237,7 +237,7 @@ typedef struct s_data
 	double			jx;
 	double			jy;
 	t_player		player;
-	t_keys			keys;
+	t_keys			*keys;
 	t_texture		textures[23];
 	double			z_buffer[WIDTH];
 	int				**world_map;
@@ -304,9 +304,9 @@ void				draw_textured_floor(t_data *img);
 
 // key_events.c
 int					key_release(int keycode, t_keys *keys);
-void				key_hook(t_keys *keys);
-int					mouse_motion(double x, double y, t_keys *keys);
-int					key_press(int keycode, t_keys *keys);
+void 				key_hook(void *param);
+int 				mouse_motion(double x, double y, void *param);
+void				key_press(int keycode, t_data *img);
 
 // utils_colors.c
 double				get_scale(t_minimap minimap);
@@ -331,6 +331,7 @@ void				initialize_mlx_window(t_data *img);
 void				initialize_doors(t_data *img);
 void				initialize_z_buffer(t_data *img);
 void				setup_mlx_hooks(t_data *img, t_keys *keys);
+void 				key_press_wrapper(mlx_key_data_t key_data, void *param);
 
 // player_move.c
 void				handle_collision(t_data *img, double oldPlayerX,

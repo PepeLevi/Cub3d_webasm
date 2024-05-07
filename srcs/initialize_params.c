@@ -6,7 +6,7 @@
 /*   By: lejimene <lejimene@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 17:33:56 by lejimene          #+#    #+#             */
-/*   Updated: 2024/05/07 18:44:32 by lejimene         ###   ########.fr       */
+/*   Updated: 2024/05/07 19:28:25 by lejimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,8 +73,3 @@ void	initialize_z_buffer(t_data *img)
 	}
 }
 
-void setup_mlx_hooks(t_data *img, t_keys *keys) {
-    mlx_key_hook(img->mlx_win, &key_press, keys); // Equivalent to mlx_hook(img->mlx_win, 2, 1L << 0, key_press, keys); // Equivalent to mlx_hook(img->mlx_win, 3, 1L << 1, key_release, keys);
-    mlx_cursor_hook(img->mlx_win, &mouse_motion, keys); // Equivalent to mlx_hook(img->mlx_win, 6, 1L << 6, mouse_motion, keys);
-    mlx_loop_hook(img->mlx_win, &key_hook, keys); // Equivalent to mlx_loop_hook(img->mlx_win, (void *)key_hook, keys);
-}

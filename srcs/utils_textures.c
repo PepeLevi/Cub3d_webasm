@@ -6,7 +6,7 @@
 /*   By: lejimene <lejimene@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 18:08:54 by emollebr          #+#    #+#             */
-/*   Updated: 2024/05/07 17:50:02 by lejimene         ###   ########.fr       */
+/*   Updated: 2024/05/07 19:34:26 by lejimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void	load_textures(t_data *img)
 		if (img->textures[i].rgb == 0)
 		{
 			img->textures[i].img = mlx_load_png(img->textures[i].path);
-			mlx_delete_image(img->mlx_win, img->textures[i].img);
+			mlx_delete_image(img->mlx_win, img->img);
 		}
 		i++;
 	}
