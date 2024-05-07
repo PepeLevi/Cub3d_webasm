@@ -6,7 +6,7 @@
 /*   By: lejimene <lejimene@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 15:13:28 by lejimene          #+#    #+#             */
-/*   Updated: 2024/05/04 20:20:20 by lejimene         ###   ########.fr       */
+/*   Updated: 2024/05/07 18:22:31 by lejimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,8 @@ void	draw_door_lines(t_data *img, t_ray *ray, t_door *doors, int x)
 		if (color != (unsigned int)0xFF000000)
 		{
 			color = darken_color(color, ray->perp_wall_dist);
-			mlx_put_pixel(img->img, x, y, color);
+			//if (ft_get_pixel(img->img, x, y) != 0)
+				mlx_put_pixel(img->img, x, y, color);
 		}
 	}
 }

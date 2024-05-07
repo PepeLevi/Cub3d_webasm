@@ -6,7 +6,7 @@
 /*   By: lejimene <lejimene@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 17:55:36 by emollebr          #+#    #+#             */
-/*   Updated: 2024/05/04 20:20:20 by lejimene         ###   ########.fr       */
+/*   Updated: 2024/05/07 18:22:31 by lejimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ void	draw_textured_wall(t_data *img, t_ray *ray, int x)
 		color = get_texture_color(img->textures[tex_num], (int)tex[0],
 				(int)tex[1]);
 		color = darken_color(color, ray->perp_wall_dist);
-		mlx_put_pixel(img->img, x, y, color);
+		//if (ft_get_pixel(img->img, x, y) != 0)
+			mlx_put_pixel(img->img, x, y, color);
 		y++;
 	}
 }
@@ -109,8 +110,10 @@ void	draw_textured_floor(t_data *img)
 		{
 			calculate_floor_values(&floor_values);
 			draw_floor_pixel(img, &floor_values);
-			mlx_put_pixel(img->img, floor_values.x, y, floor_values.floor_color);
-			mlx_put_pixel(img->img, floor_values.x, HEIGHT - y - 1,
+			////if (ft_get_pixel(img->img, floor_values.x, y) != 0)
+				mlx_put_pixel(img->img, floor_values.x, y, floor_values.floor_color);
+			////if (ft_get_pixel(img->img, floor_values.x, HEIGHT - y - 1) != 0)
+				mlx_put_pixel(img->img, floor_values.x, HEIGHT - y - 1,
 				floor_values.ceil_color);
 			floor_values.x++;
 		}

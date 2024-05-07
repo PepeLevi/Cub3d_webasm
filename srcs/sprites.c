@@ -6,13 +6,13 @@
 /*   By: lejimene <lejimene@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 16:41:48 by lejimene          #+#    #+#             */
-/*   Updated: 2024/05/07 17:15:49 by lejimene         ###   ########.fr       */
+/*   Updated: 2024/05/07 18:22:31 by lejimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/cub3d.h"
 
-void	draw_sprite_column(t_sprite *sprite, t_sprite_data *s, int stripe,
+void	draw_sprite_column(t_data *img, t_sprite *sprite, t_sprite_data *s, int stripe,
 		int i)
 {
 	int	d;
@@ -34,7 +34,9 @@ void	draw_sprite_column(t_sprite *sprite, t_sprite_data *s, int stripe,
 			if (s->color != (int)0xFF000000)
 			{
 				s->color = darken_color(s->color, s->sprite_distance[i] / 6);
-				mlx_put_pixel(s->img, stripe, y, s->color);
+				printf("Setting pixel at (%d, %d) with color %d\n", stripe, y, s->color);
+				//if (ft_get_pixel(img->img, stripe, y) != 0)
+					mlx_put_pixel(img->img, stripe, y, s->color);
 			}
 		}
 	}
@@ -80,7 +82,7 @@ void	draw_sprites_loop(t_data *img, t_sprite_data *s, t_sprite *sprites,
 		initialize_sprite_data(s, s->sprite, img);
 		stripe = s->draw_start_x - 1;
 		while (++stripe < s->draw_end_x)
-			draw_sprite_column(s->sprite, s, stripe, i);
+			draw_sprite_column(img, s->sprite, s, stripe, i);
 	}
 }
 
@@ -109,4 +111,18 @@ int	draw_sprites(t_data *img)
 	free(sprite_order);
 	free(sprites);
 	return (0);
+}
+
+int	ft_get_pixel(mlx_texture_t *texture, int x, int y)
+{
+	int	offset;
+
+	if ((int)texture->width <= x)
+		x = texture->width - 1;
+	if ((int)texture->height <= y)
+		y = texture->height - 1;
+	offset = (y * texture->width + x) * texture->bytes_per_pixel;
+	return (texture->pixels[offset] << 24 | \
+	texture->pixels[offset + 1] << 16 | texture->pixels[offset + 2] << 8 \
+	| texture->pixels[offset + 3]);
 }

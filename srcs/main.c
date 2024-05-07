@@ -6,7 +6,7 @@
 /*   By: lejimene <lejimene@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/07 17:15:39 by lejimene          #+#    #+#             */
-/*   Updated: 2024/05/04 19:51:45 by lejimene         ###   ########.fr       */
+/*   Updated: 2024/05/07 18:24:50 by lejimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	close_program(t_data *img)
 
 int	render_frame(t_data *img)
 {
-	memset(img->addr, 0, WIDTH * HEIGHT * (img->bits_per_pixel / 8));
+	//memset(img->addr, 0, WIDTH * HEIGHT * (img->bits_per_pixel / 8));
 	if (cast_rays(img) == -1)
 		return (free_all(img), -1);
 	update_image(img, &img->keys);

@@ -6,7 +6,7 @@
 /*   By: lejimene <lejimene@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 17:02:13 by emollebr          #+#    #+#             */
-/*   Updated: 2024/05/04 20:22:48 by lejimene         ###   ########.fr       */
+/*   Updated: 2024/05/07 18:22:31 by lejimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,8 @@ void	draw_visible_area(t_data *img, t_minimap *minimap, int cell_x,
 				color = get_texture_color(img->textures[minimap->wall_or_door],
 						og_x, og_y);
 			}
-			mlx_put_pixel(img->img, cell_x + i, cell_y + j, color);
+			//if (ft_get_pixel(img->img, cell_x + i, cell_y + j) != 0)
+				mlx_put_pixel(img->img, cell_x + i, cell_y + j, color);
 		}
 	}
 }
@@ -61,7 +62,8 @@ void	draw_background(t_data *img, t_minimap *minimap)
 				color = 0xebe7c5;
 			else
 				color = get_texture_color(img->textures[l_MMBG], og_x, og_y);
-			mlx_put_pixel(img->img, x, y, color);
+			//if (ft_get_pixel(img->img, x, y) != 0)
+				mlx_put_pixel(img->img, x, y, color);
 			x++;
 		}
 		y++;
@@ -85,7 +87,8 @@ void	draw_player(t_data *img, t_minimap *minimap)
 	{
 		x = minimap->player_x + 5 * cos(angle * M_PI / 180.0);
 		y = minimap->player_y + 5 * sin(angle * M_PI / 180.0);
-		mlx_put_pixel(img->img, x, y, 0xffff00);
+		//if (ft_get_pixel(img->img, x, y) != 0)
+			mlx_put_pixel(img->img, x, y, 0xffff00);
 		angle++;
 	}
 	minimap->line_end_x = minimap->player_x + 15 * cos(player_angle);

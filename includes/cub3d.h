@@ -6,7 +6,7 @@
 /*   By: lejimene <lejimene@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/07 17:16:37 by lejimene          #+#    #+#             */
-/*   Updated: 2024/05/07 17:22:53 by lejimene         ###   ########.fr       */
+/*   Updated: 2024/05/07 18:51:44 by lejimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -219,9 +219,9 @@ typedef struct s_minimap
 
 typedef struct s_data
 {
-	void			*img;
+	mlx_image_t			*img;
 	void			*mlx;
-	void			*mlx_win;
+	mlx_t			*mlx_win;
 	char			*addr;
 	int				bits_per_pixel;
 	int				line_length;
@@ -304,8 +304,8 @@ void				draw_textured_floor(t_data *img);
 
 // key_events.c
 int					key_release(int keycode, t_keys *keys);
-int					key_hook(t_keys *keys);
-int					mouse_motion(int x, int y, t_keys *keys);
+void				key_hook(t_keys *keys);
+int					mouse_motion(double x, double y, t_keys *keys);
 int					key_press(int keycode, t_keys *keys);
 
 // utils_colors.c
@@ -323,6 +323,7 @@ void				load_sprites_and_doors(t_data *img);
 void				load_minimap_textures(t_data *img, t_texture *bg,
 						t_texture *va);
 void				load_textures(t_data *img);
+int					ft_get_pixel(mlx_texture_t *texture, int x, int y);
 
 // initialize_params.c
 void				initialize_ray(t_ray *ray, t_data *img, int x);

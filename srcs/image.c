@@ -6,7 +6,7 @@
 /*   By: lejimene <lejimene@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 17:34:09 by lejimene          #+#    #+#             */
-/*   Updated: 2024/05/07 17:26:40 by lejimene         ###   ########.fr       */
+/*   Updated: 2024/05/07 18:10:01 by lejimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ void	draw_overlay_image(t_data *img, void *overlay_img, int overlay_width,
 		while (++x < overlay_width)
 		{
 			color = overlay_data[y * overlay_width + x];
-			if ((color & 0x00FFFFFF) != 0)
+			if ((color & 0x00FFFFFF) != 0 && ft_get_pixel(img->img, x, y) != 0)
 				mlx_put_pixel(img->img, x, y, color);
 		}
 	}

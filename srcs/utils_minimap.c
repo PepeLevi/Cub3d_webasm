@@ -6,7 +6,7 @@
 /*   By: lejimene <lejimene@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 15:58:08 by emollebr          #+#    #+#             */
-/*   Updated: 2024/05/04 20:20:20 by lejimene         ###   ########.fr       */
+/*   Updated: 2024/05/07 18:22:31 by lejimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,8 @@ void	draw_line(t_data *img, t_minimap *minimap)
 	err = d[0] - d[1];
 	while (1)
 	{
-		mlx_put_pixel(img->img, minimap->player_x, minimap->player_y, 0xffff00);
+		//if (ft_get_pixel(img->img, minimap->player_x, minimap->player_y) != 0)
+			mlx_put_pixel(img->img, minimap->player_x, minimap->player_y, 0xffff00);
 		if (minimap->player_x == minimap->line_end_x
 			&& minimap->player_y == minimap->line_end_y)
 			break ;

@@ -100,7 +100,7 @@ static void ft_draw(void* param)
 	}
 
 	// Cheap itoa lol
-	memset(buf, '\0', sizeof(buf));
+	//memset(buf, '\0', sizeof(buf));
 	snprintf(buf, sizeof(buf), "%d", count);
 	
 	img = mlx_put_string(mlx, buf, 0, 0);
@@ -121,7 +121,7 @@ TEST_F(Window, stringTortureTest)
 	ASSERT_NE(img, nullptr);
 	ASSERT_EQ(mlx_errno, MLX_SUCCESS);
 
-	memset(img->pixels, 255, sizeof(int32_t) * img->width * img->height);
+	//memset(img->pixels, 255, sizeof(int32_t) * img->width * img->height);
 
 	int32_t val_window = mlx_image_to_window(mlx, img, Window::width / 4 , Window::height / 4);
 	EXPECT_GE(val_window, 0);
