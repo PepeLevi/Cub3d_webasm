@@ -6,7 +6,7 @@
 /*   By: lejimene <lejimene@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 18:08:54 by emollebr          #+#    #+#             */
-/*   Updated: 2024/05/07 19:34:26 by lejimene         ###   ########.fr       */
+/*   Updated: 2024/05/13 17:10:46 by lejimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ void	load_sprites_and_doors(t_data *img)
 		{
 			img->textures[i].img = mlx_load_png(img->textures[i].path);
 		}
+		else
+			printf ("KEEEE\n");
 		i++;
 	}
 }
@@ -57,6 +59,8 @@ void	load_minimap_textures(t_data *img, t_texture *bg, t_texture *va)
 	}
 	if (access("./images/4.png", O_RDONLY) == 0)
 	{
+		img->textures[l_F].img = mlx_load_png("./images/4.png");
+		img->textures[l_C].img = mlx_load_png("./images/4.png");
 		va->img = mlx_load_png("./images/4.png");
 	}
 }
@@ -68,10 +72,9 @@ void	load_textures(t_data *img)
 	i = 0;
 	while (i < 6)
 	{
-		if (img->textures[i].rgb == 0)
+		if (img->textures[i].path)
 		{
 			img->textures[i].img = mlx_load_png(img->textures[i].path);
-			mlx_delete_image(img->mlx_win, img->img);
 		}
 		i++;
 	}

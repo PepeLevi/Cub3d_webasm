@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_textures.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emollebr <emollebr@student.42berlin.d      +#+  +:+       +#+        */
+/*   By: lejimene <lejimene@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 16:06:50 by emollebr          #+#    #+#             */
-/*   Updated: 2024/01/29 16:06:52 by emollebr         ###   ########.fr       */
+/*   Updated: 2024/05/13 17:08:11 by lejimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,13 +51,10 @@ int	copy_texture_element(t_texture *element, char *line)
 	element->path = ft_substr(line, i, ft_strlen(line) - i - 1);
 	if ((line[0] == 'F' || line[0] == 'C') && ft_isdigit(element->path[0]) == 1)
 	{
-		element->rgb = rgb_to_unsigned_int(element->path);
-		if (element->rgb == 0)
-			return (-1);
+		element->img = mlx_load_png(element->path);
 	}
 	else if (ft_strchr("NSWEFC", line[0]) != 0)
 	{
-		element->rgb = 0;
 		if (access(element->path, O_RDONLY) < 0)
 			return (ft_printf("Error: Couldn't access texture file: %s\n",
 					element->path), -1);

@@ -6,7 +6,7 @@
 /*   By: lejimene <lejimene@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 16:11:37 by lejimene          #+#    #+#             */
-/*   Updated: 2024/05/07 19:33:42 by lejimene         ###   ########.fr       */
+/*   Updated: 2024/05/13 16:05:34 by lejimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void key_hook(void *param) {
     return;
 }
 
-int mouse_motion(double x, double y, void *param) {
+void mouse_motion(double x, double y, void *param) {
     t_keys *keys = (t_keys *)param;
 
     double rotation_speed;
@@ -65,7 +65,6 @@ int mouse_motion(double x, double y, void *param) {
             + keys->img->player.plane_y * cos(rotation_speed);
         mlx_set_mouse_pos(keys->img->mlx_win, WIDTH / 2, HEIGHT / 2);
     }
-    return (0);
 }
 void	key_space(t_keys *keys)
 {

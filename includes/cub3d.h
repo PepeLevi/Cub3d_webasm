@@ -6,7 +6,7 @@
 /*   By: lejimene <lejimene@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/07 17:16:37 by lejimene          #+#    #+#             */
-/*   Updated: 2024/05/07 19:33:23 by lejimene         ###   ########.fr       */
+/*   Updated: 2024/05/13 16:27:34 by lejimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -300,12 +300,12 @@ void				calculate_perp_wall_dist(t_ray *ray, t_data *img);
 
 // draw.c
 void				draw_textured_wall(t_data *img, t_ray *ray, int x);
-void				draw_textured_floor(t_data *img);
+void				draw_textured_floor(t_data *param);
 
 // key_events.c
 int					key_release(int keycode, t_keys *keys);
 void 				key_hook(void *param);
-int 				mouse_motion(double x, double y, void *param);
+void 				mouse_motion(double x, double y, void *param);
 void				key_press(int keycode, t_data *img);
 
 // utils_colors.c

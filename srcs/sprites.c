@@ -6,7 +6,7 @@
 /*   By: lejimene <lejimene@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 16:41:48 by lejimene          #+#    #+#             */
-/*   Updated: 2024/05/07 18:22:31 by lejimene         ###   ########.fr       */
+/*   Updated: 2024/05/13 17:15:50 by lejimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ void	draw_sprite_column(t_data *img, t_sprite *sprite, t_sprite_data *s, int str
 					s->tex_x, s->tex_y);
 			if (s->color != (int)0xFF000000)
 			{
-				s->color = darken_color(s->color, s->sprite_distance[i] / 6);
-				printf("Setting pixel at (%d, %d) with color %d\n", stripe, y, s->color);
-				//if (ft_get_pixel(img->img, stripe, y) != 0)
+				s->color = darken_color(ft_get_pixel(s->img->textures[sprite->tex_idx].img, stripe, y), s->sprite_distance[i] / 6);
+				//printf("Setting pixel at (%d, %d) with color %d\n", stripe, y, s->color);
+				if (ft_get_pixel(s->img->textures[sprite->tex_idx].img, stripe, y) != 0)
 					mlx_put_pixel(img->img, stripe, y, s->color);
 			}
 		}

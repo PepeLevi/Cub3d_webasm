@@ -6,7 +6,7 @@
 /*   By: lejimene <lejimene@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 17:08:36 by emollebr          #+#    #+#             */
-/*   Updated: 2024/05/04 20:22:02 by lejimene         ###   ########.fr       */
+/*   Updated: 2024/05/13 17:11:27 by lejimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,6 @@ void	sync_overlay_images(t_data *img, void **overlay_img, int img_width,
 	draw_overlay_image(img, overlay_img[0], img_width, img_height);
 	draw_overlay_image(img, overlay_img[1], img_width, img_height);
 	draw_overlay_image(img, overlay_img[2], img_width, img_height);
-	mlx_delete_image(img->mlx_win, overlay_img[0]);
-	mlx_delete_image(img->mlx_win, overlay_img[1]);
-	mlx_delete_image(img->mlx_win, overlay_img[2]);
 }
 
 
@@ -71,8 +68,6 @@ int	parse_cub_file(const char *filename, t_data *img)
 	if (!file)
 		return (ft_printf("Error: Couldn't open file: %s\n", filename), -1);
 	if (parse_textures(file, img) == -1)
-		return (-1);
-	if (img->textures == NULL)
 		return (-1);
 	start_of_map = get_map_dimensions(file, img);
 	close(file);

@@ -6,7 +6,7 @@
 /*   By: lejimene <lejimene@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 17:55:36 by emollebr          #+#    #+#             */
-/*   Updated: 2024/05/07 19:35:36 by lejimene         ###   ########.fr       */
+/*   Updated: 2024/05/13 16:36:06 by lejimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,10 +54,10 @@ void	initialize_floor_values(t_data *img, int y,
 		* floor_values->ray_dir_x0;
 	floor_values->floor_y = img->player.y + floor_values->row_distance
 		* floor_values->ray_dir_y0;
-	floor_values->tex_width_f = img->textures[l_F].width;
-	floor_values->tex_height_f = img->textures[l_F].height;
-	floor_values->ceil_tex_width_c = img->textures[l_C].width;
-	floor_values->ceil_tex_height_c = img->textures[l_C].height;
+	floor_values->tex_width_f = img->textures[l_F].img->width;
+	floor_values->tex_height_f = img->textures[l_F].img->height;
+	floor_values->ceil_tex_width_c = img->textures[l_C].img->width;
+	floor_values->ceil_tex_height_c = img->textures[l_C].img->height;
 	floor_values->x = 0;
 }
 
@@ -97,9 +97,10 @@ void	draw_floor_pixel(t_data *img, t_floor_values *floor_values)
 			(double)floor_values->row_distance);
 }
 
-void draw_textured_floor(t_data *img) {
+void draw_textured_floor(t_data *param) {
     int y;
     t_floor_values floor_values;
+	t_data *img = param;
 
     y = HEIGHT / 2 + 1;
     while (y < HEIGHT) {
@@ -108,12 +109,12 @@ void draw_textured_floor(t_data *img) {
             calculate_floor_values(&floor_values);
             draw_floor_pixel(img, &floor_values);
     
-            if (ft_get_pixel(img->textures[3].img, floor_values.x, y) != 0)
+            if (ft_get_pixel(img->textures[l_F].img, floor_values.x, y) != 0)
                 mlx_put_pixel(img->img, floor_values.x, y,
-                              ft_get_pixel(img->textures[3].img, floor_values.x, y));
-            if (ft_get_pixel(img->textures[3].img, floor_values.x, HEIGHT - y - 1) != 0)
+                              ft_get_pixel(img->textures[l_F].img, floor_values.x, y));
+            if (ft_get_pixel(img->textures[l_C].img, floor_values.x, HEIGHT - y - 1) != 0)
                 mlx_put_pixel(img->img, floor_values.x, HEIGHT - y - 1,
-                              ft_get_pixel(img->textures[3].img, floor_values.x, HEIGHT - y - 1));
+                              ft_get_pixel(img->textures[l_C].img, floor_values.x, HEIGHT - y - 1));
             
             floor_values.x++;
         }

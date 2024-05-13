@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cast_rays.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emollebr <emollebr@student.42berlin.d      +#+  +:+       +#+        */
+/*   By: lejimene <lejimene@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 13:38:15 by emollebr          #+#    #+#             */
-/*   Updated: 2024/02/02 13:38:17 by emollebr         ###   ########.fr       */
+/*   Updated: 2024/05/13 16:17:19 by lejimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,9 +89,10 @@ int	cast_rays(t_data *img)
 {
 	int		x;
 	t_ray	ray;
+	t_data *img2 = img;
 
 	x = 0;
-	draw_textured_floor(img);
+	draw_textured_floor(img2);
 	while (x < WIDTH)
 	{
 		initialize_ray(&ray, img, x);

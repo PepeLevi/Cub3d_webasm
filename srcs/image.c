@@ -6,7 +6,7 @@
 /*   By: lejimene <lejimene@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 17:34:09 by lejimene          #+#    #+#             */
-/*   Updated: 2024/05/07 18:10:01 by lejimene         ###   ########.fr       */
+/*   Updated: 2024/05/13 16:09:57 by lejimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,8 +82,8 @@ void	draw_overlay_image(t_data *img, void *overlay_img, int overlay_width,
 		while (++x < overlay_width)
 		{
 			color = overlay_data[y * overlay_width + x];
-			if ((color & 0x00FFFFFF) != 0 && ft_get_pixel(img->img, x, y) != 0)
-				mlx_put_pixel(img->img, x, y, color);
+			if ((color & 0x00FFFFFF) != 0 && ft_get_pixel(overlay_img, x, y) != 0)
+				mlx_put_pixel(overlay_img, x, y, color);
 		}
 	}
 }
@@ -125,12 +125,5 @@ void	update_image(t_data *img, t_keys *keys)
 	overlay_img[0] = load_overlay_image(img, keys, &img_width, &img_height);
 	overlay_img[1] = mlx_load_png("./images/hbhbjhb.png");
 	overlay_img[2] = tumor_anim(img, &img_width, &img_height);
-	if (overlay_img != NULL)
-		sync_overlay_images(img, overlay_img, img_width, img_height);
-	else
-	{
-		perror("Error loading overlay image.\n");
-		free_all(img);
-		exit(EXIT_FAILURE);
-	}
+	sync_overlay_images(img, overlay_img, img_width, img_height);
 }
