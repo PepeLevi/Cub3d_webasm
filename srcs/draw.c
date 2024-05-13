@@ -6,7 +6,7 @@
 /*   By: lejimene <lejimene@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 17:55:36 by emollebr          #+#    #+#             */
-/*   Updated: 2024/05/13 16:36:06 by lejimene         ###   ########.fr       */
+/*   Updated: 2024/05/13 17:53:45 by lejimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,12 @@ void	draw_textured_wall(t_data *img, t_ray *ray, int x)
 	while (y < ray->draw_end)
 	{
 		tex[1] = (((y * 256 - HEIGHT * 128 + ray->line_height * 128)
-					* img->textures[tex_num].height) / ray->line_height) / 256;
-		tex[1] = fmin(fmax(tex[1], 0), img->textures[tex_num].height - 1);
-		color = get_texture_color(img->textures[tex_num], (int)tex[0],
+					* img->textures[tex_num].img->height) / ray->line_height) / 256;
+		tex[1] = fmin(fmax(tex[1], 0), img->textures[tex_num].img->height - 1);
+		color = ft_get_pixel(img->textures[tex_num].img, (int)tex[0],
 				(int)tex[1]);
 		color = darken_color(color, ray->perp_wall_dist);
-		//if (ft_get_pixel(img->img, x, y) != 0)
+		if (color != 0)
 			mlx_put_pixel(img->img, x, y, color);
 		y++;
 	}
@@ -81,15 +81,13 @@ void	calculate_floor_values(t_floor_values *floor_values)
 
 void	draw_floor_pixel(t_data *img, t_floor_values *floor_values)
 {
-	if (img->textures[l_F].rgb != 0)
-		floor_values->floor_color = img->textures[l_F].rgb;
-	else
-		floor_values->floor_color = get_texture_color(img->textures[l_F],
+	if (ft_get_pixel(img->textures[l_F].img,
+				floor_values->tx, floor_values->ty) != 0)
+		floor_values->floor_color = ft_get_pixel(img->textures[l_F].img,
 				floor_values->tx, floor_values->ty);
-	if (img->textures[l_C].rgb != 0)
-		floor_values->ceil_color = img->textures[l_C].rgb;
-	else
-		floor_values->ceil_color = get_texture_color(img->textures[l_C],
+	if (ft_get_pixel(img->textures[l_C].img,
+				floor_values->ceil_tx, floor_values->ceil_ty) != 0)
+		floor_values->ceil_color = ft_get_pixel(img->textures[l_C].img,
 				floor_values->ceil_tx, floor_values->ceil_ty);
 	floor_values->floor_color = darken_color(floor_values->floor_color,
 			(double)floor_values->row_distance);
@@ -109,12 +107,10 @@ void draw_textured_floor(t_data *param) {
             calculate_floor_values(&floor_values);
             draw_floor_pixel(img, &floor_values);
     
-            if (ft_get_pixel(img->textures[l_F].img, floor_values.x, y) != 0)
-                mlx_put_pixel(img->img, floor_values.x, y,
-                              ft_get_pixel(img->textures[l_F].img, floor_values.x, y));
-            if (ft_get_pixel(img->textures[l_C].img, floor_values.x, HEIGHT - y - 1) != 0)
-                mlx_put_pixel(img->img, floor_values.x, HEIGHT - y - 1,
-                              ft_get_pixel(img->textures[l_C].img, floor_values.x, HEIGHT - y - 1));
+            if (floor_values.floor_color != 0)
+                mlx_put_pixel(img->img, floor_values.x, y, floor_values.floor_color);
+            if (floor_values.ceil_color != 0)
+                mlx_put_pixel(img->img, floor_values.x, HEIGHT - y - 1, floor_values.ceil_color);
             
             floor_values.x++;
         }

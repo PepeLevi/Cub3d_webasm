@@ -6,7 +6,7 @@
 /*   By: lejimene <lejimene@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 17:08:36 by emollebr          #+#    #+#             */
-/*   Updated: 2024/05/13 17:11:27 by lejimene         ###   ########.fr       */
+/*   Updated: 2024/05/13 17:52:10 by lejimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,10 @@ unsigned int	calculate_wall_values(t_ray *ray, t_data *img, int *tex_num,
 		*tex_num = (ray->ray_dir_y > 0) * 0 + (ray->ray_dir_y <= 0) * 1;
 	}
 	*wall_x -= floor(*wall_x);
-	tex_x = (unsigned int)(*wall_x * img->textures[*tex_num].width);
+	tex_x = (unsigned int)(*wall_x * img->textures[*tex_num].img->width);
 	if ((ray->side == 0 && ray->ray_dir_x > 0) || (ray->side == 1
 			&& ray->ray_dir_y < 0))
-		tex_x = img->textures[*tex_num].width - tex_x - 1;
+		tex_x = img->textures[*tex_num].img->width - tex_x - 1;
 	return (tex_x);
 }
 

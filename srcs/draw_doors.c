@@ -6,7 +6,7 @@
 /*   By: lejimene <lejimene@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 15:13:28 by lejimene          #+#    #+#             */
-/*   Updated: 2024/05/13 17:17:49 by lejimene         ###   ########.fr       */
+/*   Updated: 2024/05/13 17:55:28 by lejimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ void	calculate_door_parameters(t_ray *ray, t_data *img, t_door *doors)
 		doors->wall_x = img->player.x + ray->perp_wall_dist * ray->ray_dir_x;
 	doors->wall_x -= floor(doors->wall_x);
 	doors->tex_x = (int)(doors->wall_x
-			* (double)img->textures[doors->tex_num].width);
+			* (double)img->textures[doors->tex_num].img->width);
 	if ((ray->side == 0 && ray->ray_dir_x > 0) || (ray->side == 1
 			&& ray->ray_dir_y < 0))
-		doors->tex_x = img->textures[doors->tex_num].width - doors->tex_x - 1;
+		doors->tex_x = img->textures[doors->tex_num].img->width - doors->tex_x - 1;
 }
 
 void	draw_door_lines(t_data *img, t_ray *ray, t_door *doors, int x)
@@ -37,13 +37,13 @@ void	draw_door_lines(t_data *img, t_ray *ray, t_door *doors, int x)
 	{
 		doors->tex_y = (int)(((long long)y * 256 - (long long)HEIGHT * 128
 					+ (long long)ray->line_height * 128)
-				* img->textures[doors->tex_num].height / ray->line_height)
+				* img->textures[doors->tex_num].img->height / ray->line_height)
 			/ 256;
 		color = ft_get_pixel(img->textures[doors->tex_num].img, x, y);
 		if (color != (unsigned int)0xFF000000)
 		{
 			color = darken_color(color, ray->perp_wall_dist);
-			if (ft_get_pixel(img->textures[doors->tex_num].img, x, y) != 0)
+			if (color != 0)
 				mlx_put_pixel(img->img, x, y, color);
 		}
 	}
