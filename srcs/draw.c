@@ -97,26 +97,27 @@ void	draw_floor_pixel(t_data *img, t_floor_values *floor_values)
 			(double)floor_values->row_distance);
 }
 
-void	draw_textured_floor(t_data *img)
-{
-	int				y;
-	t_floor_values	floor_values;
+void draw_textured_floor(t_data *img) {
+    int y;
+    t_floor_values floor_values;
 
-	y = HEIGHT / 2 + 1;
-	while (y < HEIGHT)
-	{
-		initialize_floor_values(img, y, &floor_values);
-		while (floor_values.x < WIDTH)
-		{
-			calculate_floor_values(&floor_values);
-			draw_floor_pixel(img, &floor_values);
-			////if (ft_get_pixel(img->img, floor_values.x, y) != 0)
-				mlx_put_pixel(img->img, floor_values.x, y, floor_values.floor_color);
-			////if (ft_get_pixel(img->img, floor_values.x, HEIGHT - y - 1) != 0)
-				mlx_put_pixel(img->img, floor_values.x, HEIGHT - y - 1,
-				floor_values.ceil_color);
-			floor_values.x++;
-		}
-		y++;
-	}
+    y = HEIGHT / 2 + 1;
+    while (y < HEIGHT) {
+        initialize_floor_values(img, y, &floor_values);
+        while (floor_values.x < WIDTH) {
+            calculate_floor_values(&floor_values);
+            draw_floor_pixel(img, &floor_values);
+    
+            if (ft_get_pixel(img->textures[3].img, floor_values.x, y) != 0)
+                mlx_put_pixel(img->img, floor_values.x, y,
+                              ft_get_pixel(img->textures[3].img, floor_values.x, y));
+            if (ft_get_pixel(img->textures[3].img, floor_values.x, HEIGHT - y - 1) != 0)
+                mlx_put_pixel(img->img, floor_values.x, HEIGHT - y - 1,
+                              ft_get_pixel(img->textures[3].img, floor_values.x, HEIGHT - y - 1));
+            
+            floor_values.x++;
+        }
+        y++;
+    }
 }
+

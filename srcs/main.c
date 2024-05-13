@@ -28,7 +28,7 @@ int	render_frame(t_data *img)
 	if (cast_rays(img) == -1)
 		return (free_all(img), -1);
 	update_image(img, img->keys);
-	key_hook(img->keys);
+	key_hook(img);
 	return (0);
 }
 
@@ -92,7 +92,7 @@ int	main(int argc, char **argv)
 	img.keys = &keys;
 	mlx_key_hook(img.mlx_win, &key_press_wrapper, &img); // Equivalent to mlx_hook(img->mlx_win, 2, 1L << 0, key_press, keys); // Equivalent to mlx_hook(img->mlx_win, 3, 1L << 1, key_release, keys);
     mlx_cursor_hook(img.mlx_win, &mouse_motion, &keys); // Equivalent to mlx_hook(img->mlx_win, 6, 1L << 6, mouse_motion, keys);
-    mlx_loop_hook(img.mlx_win, &key_hook, &keys);
+    mlx_loop_hook(img.mlx_win, &key_hook, &img);
 	mlx_loop(img.mlx_win);
 	free_all(&img);
 	mlx_terminate(img.mlx_win);

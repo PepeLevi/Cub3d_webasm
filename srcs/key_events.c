@@ -32,8 +32,8 @@ int	key_release(int keycode, t_keys *keys)
 }
 
 void key_hook(void *param) {
-    t_keys *keys = (t_keys *)param;
-    t_data *img = keys->img;
+    t_data *img = param;
+    t_keys *keys = img->keys;
 
     handle_player_movement(keys, img);
     ////memset(img->addr, 0, WIDTH * HEIGHT * (img->bits_per_pixel / 8));
