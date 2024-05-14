@@ -6,7 +6,7 @@
 /*   By: lejimene <lejimene@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 16:11:37 by lejimene          #+#    #+#             */
-/*   Updated: 2024/05/13 16:05:34 by lejimene         ###   ########.fr       */
+/*   Updated: 2024/05/14 19:48:39 by lejimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,15 @@ int	key_release(int keycode, t_keys *keys)
 void key_hook(void *param) {
     t_data *img = param;
     t_keys *keys = img->keys;
+    mlx_image_t *tmp;
 
     handle_player_movement(keys, img);
     ////memset(img->addr, 0, WIDTH * HEIGHT * (img->bits_per_pixel / 8));
     if (cast_rays(img) == -1)
         return (free_all(img));
     update_image(img, keys);
+    mlx_delete_image(img->mlx_win, tmp);
+    mlx_image_to_window(img->mlx_win, img->img, 0, 0);
     return;
 }
 

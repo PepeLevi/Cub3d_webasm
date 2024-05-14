@@ -6,7 +6,7 @@
 /*   By: lejimene <lejimene@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 17:08:36 by emollebr          #+#    #+#             */
-/*   Updated: 2024/05/13 17:52:10 by lejimene         ###   ########.fr       */
+/*   Updated: 2024/05/14 19:55:43 by lejimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,11 @@ unsigned int	calculate_wall_values(t_ray *ray, t_data *img, int *tex_num,
 	return (tex_x);
 }
 
-void	sync_overlay_images(t_data *img, void **overlay_img, int img_width,
+void	sync_overlay_images(t_data *img, mlx_texture_t **overlay_img, int img_width,
 		int img_height)
 {
-	mlx_image_to_window(img->mlx_win, img->img, 0, 0);
+	mlx_image_t	*temp_img = img->img;
+
 	render_minimap(img);
 	draw_overlay_image(img, overlay_img[0], img_width, img_height);
 	draw_overlay_image(img, overlay_img[1], img_width, img_height);

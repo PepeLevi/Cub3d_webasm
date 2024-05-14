@@ -6,7 +6,7 @@
 /*   By: lejimene <lejimene@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 15:13:28 by lejimene          #+#    #+#             */
-/*   Updated: 2024/05/13 17:55:28 by lejimene         ###   ########.fr       */
+/*   Updated: 2024/05/14 20:14:44 by lejimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ void	draw_door_lines(t_data *img, t_ray *ray, t_door *doors, int x)
 {
 	int				y;
 	unsigned int	color;
+	unsigned int	tex[2];
 
 	y = ray->draw_start;
 	while (++y < ray->draw_end)
@@ -39,8 +40,8 @@ void	draw_door_lines(t_data *img, t_ray *ray, t_door *doors, int x)
 					+ (long long)ray->line_height * 128)
 				* img->textures[doors->tex_num].img->height / ray->line_height)
 			/ 256;
-		color = ft_get_pixel(img->textures[doors->tex_num].img, x, y);
-		if (color != (unsigned int)0xFF000000)
+		color = ft_get_pixel(img->textures[doors->tex_num].img, doors->tex_x, doors->tex_y);
+		if (color != -256)
 		{
 			color = darken_color(color, ray->perp_wall_dist);
 			if (color != 0)

@@ -6,7 +6,7 @@
 /*   By: lejimene <lejimene@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/07 17:16:37 by lejimene          #+#    #+#             */
-/*   Updated: 2024/05/13 16:27:34 by lejimene         ###   ########.fr       */
+/*   Updated: 2024/05/14 20:07:22 by lejimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@
 #  define M_PI 3.14159265358979323846
 # endif
 # define DBL_MAX 1.7976931348623157e+308
+#define CLAMP(x, min, max) ((x) < (min) ? (min) : ((x) > (max) ? (max) : (x)))
+
 
 # define MAP_ERROR_1 "Error: Invalid character in the map: "
 # define MAP_ERROR_2 "Error: Invalid character in the first or last row: "
@@ -342,7 +344,7 @@ void				rotate_player(t_data *img, double rot_speed, int direction);
 void				handle_player_movement(t_keys *keys, t_data *img);
 
 // image.c
-void				draw_overlay_image(t_data *img, void *overlay_img,
+void				draw_overlay_image(t_data *img, mlx_texture_t *overlay_img,
 						int overlay_width, int overlay_height);
 void				update_image(t_data *img, t_keys *keys);
 
@@ -371,7 +373,7 @@ int					draw_doors(t_data *img, t_door *doors, int x, t_ray *ray);
 int					validate_textures(t_data *img, int elems);
 unsigned int		calculate_wall_values(t_ray *ray, t_data *img, int *tex_num,
 						double *wall_x);
-void				sync_overlay_images(t_data *img, void **overlay_img,
+void				sync_overlay_images(t_data *img, mlx_texture_t **overlay_img,
 						int img_width, int img_height);
 int					parse_cub_file(const char *filename, t_data *img);
 
