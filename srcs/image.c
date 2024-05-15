@@ -88,19 +88,16 @@ void	draw_overlay_image(t_data *img, mlx_texture_t *overlay_img, int overlay_wid
 
 void	*tumor_anim(t_data *img, int *img_width, int *img_height)
 {
-	mlx_texture_t	*image;
 	char	relative_path[50];
 
 	ft_sprintf(relative_path, img->current_anim_frame + 1);
-	image = mlx_load_png(relative_path);
-	return (image);
+	return (mlx_load_png(relative_path));
 }
 
 mlx_texture_t	*load_overlay_image(t_data *img, t_keys *keys, int *img_width,
 		int *img_height)
 {
 	char	*relative_path;
-	mlx_texture_t	*tmp;
 
 	if (keys->q)
 		relative_path = "./images/divine.png";
@@ -112,8 +109,7 @@ mlx_texture_t	*load_overlay_image(t_data *img, t_keys *keys, int *img_width,
 		relative_path = "./images/headedright.png";
 	else
 		relative_path = "./images/headed1.png";
-	tmp = mlx_load_png(relative_path);
-	return (tmp);
+	return (mlx_load_png(relative_path));
 }
 
 void	update_image(t_data *img, t_keys *keys)
@@ -126,4 +122,8 @@ void	update_image(t_data *img, t_keys *keys)
 	overlay_img[1] = mlx_load_png("./images/hbhbjhb.png");
 	overlay_img[2] = tumor_anim(img, &img_width, &img_height);
 	sync_overlay_images(img, overlay_img, img_width, img_height);
+
+	if (overlay_img[0]) mlx_delete_texture(overlay_img[0]);
+    if (overlay_img[1]) mlx_delete_texture(overlay_img[1]);
+    if (overlay_img[2]) mlx_delete_texture(overlay_img[2]);
 }

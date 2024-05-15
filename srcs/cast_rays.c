@@ -89,10 +89,9 @@ int	cast_rays(t_data *img)
 {
 	int		x;
 	t_ray	ray;
-	t_data *img2 = img;
 
 	x = 0;
-	draw_textured_floor(img2);
+	draw_textured_floor(img);
 	while (x < WIDTH)
 	{
 		initialize_ray(&ray, img, x);

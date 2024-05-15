@@ -35,7 +35,7 @@ void	initialize_ray(t_ray *ray, t_data *img, int x)
 void	initialize_mlx_window(t_data *img)
 {
 	img->mlx_win = mlx_init(WIDTH, HEIGHT, "42_Yesod", false);
-	img->img = mlx_new_image(img->mlx_win, WIDTH, HEIGHT);
+	//img->img = mlx_new_image(img->mlx_win, WIDTH, HEIGHT);
 }
 
 void	initialize_doors(t_data *img)

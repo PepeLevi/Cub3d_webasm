@@ -35,29 +35,41 @@ void	free_sprites(t_sprite *sprites)
 	free(sprites);
 }
 
-void	free_all(t_data *img)
+void free_all(t_data *img)
 {
-	int			i;
+    int i;
 
-	i = -1;
-	if (img->world_map != NULL)
-	{
-		while (++i < img->map_height)
-			free(img->world_map[i]);
-		free(img->world_map);
-	}
-	i = -1;
-	while (++i < 23)
-	{
-		if (img->textures[i].img != NULL)
-		{
-			mlx_delete_image(img->mlx_win, img->img);
-			free(img->textures[i].path);
-		}
-	}
-	free_sprites(img->sprites);
-	return ;
+    // Free world_map if it is not NULL
+    if (img->world_map != NULL)
+    {
+        for (i = 0; i < img->map_height; i++)
+        {
+            free(img->world_map[i]);
+        }
+        free(img->world_map);
+    }
+
+    // Free textures
+    for (i = 0; i < 23; i++)
+    {
+        if (img->textures[i].img != NULL)
+        {
+            mlx_delete_texture(img->textures[i].img);
+            img->textures[i].img = NULL; // Set to NULL to avoid dangling pointers
+        }
+        if (img->textures[i].path != NULL)
+        {
+            free(img->textures[i].path);
+            img->textures[i].path = NULL; // Set to NULL to avoid dangling pointers
+        }
+    }
+
+    // Free sprites if applicable
+    free_sprites(img->sprites);
+
+    return;
 }
+
 
 int	main(int argc, char **argv)
 {

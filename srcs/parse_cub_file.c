@@ -51,7 +51,6 @@ unsigned int	calculate_wall_values(t_ray *ray, t_data *img, int *tex_num,
 void	sync_overlay_images(t_data *img, mlx_texture_t **overlay_img, int img_width,
 		int img_height)
 {
-	mlx_image_t	*temp_img = img->img;
 
 	render_minimap(img);
 	draw_overlay_image(img, overlay_img[0], img_width, img_height);

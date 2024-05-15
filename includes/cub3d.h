@@ -224,6 +224,7 @@ typedef struct s_data
 	mlx_image_t			*img;
 	void			*mlx;
 	mlx_t			*mlx_win;
+	mlx_image_t 	*tmp_img;
 	char			*addr;
 	int				bits_per_pixel;
 	int				line_length;

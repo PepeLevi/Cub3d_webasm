@@ -27,13 +27,13 @@ void	draw_visible_area(t_data *img, t_minimap *minimap, int cell_x,
 		j = -1;
 		while (++j < 180 / minimap->vis_height)
 		{
-			if (!img->textures[minimap->wall_or_door].addr)
+			if (!img->textures[minimap->wall_or_door].img)
 				color = 0x9e1c1c;
 			else
 			{
 				og_x = get_original_xy(img, minimap, 'x', i);
 				og_y = get_original_xy(img, minimap, 'y', j);
-				color = get_texture_color(img->textures[minimap->wall_or_door],
+				color = ft_get_pixel(img->textures[minimap->wall_or_door].img,
 						og_x, og_y);
 			}
 			//if (ft_get_pixel(img->img, cell_x + i, cell_y + j) != 0)
@@ -54,15 +54,15 @@ void	draw_background(t_data *img, t_minimap *minimap)
 	while (y < minimap->y + 180)
 	{
 		x = minimap->x;
-		og_y = (y - minimap->y) * img->textures[l_MMBG].height / 180;
+		og_y = (y - minimap->y) * img->textures[l_MMBG].img->height / 180;
 		while (x < minimap->x + 180)
 		{
-			og_x = (x - minimap->x) * img->textures[l_MMBG].width / 180;
-			if (!img->textures[l_MMBG].addr)
+			og_x = (x - minimap->x) * img->textures[l_MMBG].img->width / 180;
+			if (!img->textures[l_MMBG].img)
 				color = 0xebe7c5;
 			else
-				color = get_texture_color(img->textures[l_MMBG], og_x, og_y);
-			//if (ft_get_pixel(img->img, x, y) != 0)
+				color = ft_get_pixel(img->textures[l_MMBG].img, og_x, og_y);
+			if (color != 0)
 				mlx_put_pixel(img->img, x, y, color);
 			x++;
 		}

@@ -20,22 +20,22 @@ void	draw_sprite_column(t_data *img, t_sprite *sprite, t_sprite_data *s, int str
 
 	s->tex_x = (int)(256 * (stripe - (-s->sprite_width / 2
 					+ s->sprite_screen_x))
-			* s->img->textures[sprite->tex_idx].width / s->sprite_width) / 256;
-	if (s->transform_y > 0 && s->transform_y < s->img->z_buffer[stripe])
+			* s->img->textures[sprite->tex_idx].img->width / s->sprite_width) / 256;
+	if (s->transform_y > 0 && s->transform_y < s->img->z_buffer[stripe] && img->textures[sprite->tex_idx].img)
 	{
 		y = s->draw_start_y - 1;
 		while (++y < s->draw_end_y)
 		{
 			d = (y - MOV_SPEED) * 256 - HEIGHT * 128 + s->sprite_height * 128;
-			s->tex_y = ((d * s->img->textures[sprite->tex_idx].height)
+			s->tex_y = ((d * s->img->textures[sprite->tex_idx].img->height)
 					/ s->sprite_height) / 256;
-			s->color = get_texture_color(s->img->textures[sprite->tex_idx],
+			s->color = ft_get_pixel(img->textures[sprite->tex_idx].img,
 					s->tex_x, s->tex_y);
 			if (s->color != (int)0xFF000000)
 			{
-				s->color = darken_color(ft_get_pixel(s->img->textures[sprite->tex_idx].img, stripe, y), s->sprite_distance[i] / 6);
+				//s->color = darken_color(ft_get_pixel(img->textures[sprite->tex_idx].img, stripe, y), s->sprite_distance[i] / 6);
 				//printf("Setting pixel at (%d, %d) with color %d\n", stripe, y, s->color);
-				if (ft_get_pixel(s->img->textures[sprite->tex_idx].img, stripe, y) != 0)
+				if (s->color != 0)
 					mlx_put_pixel(img->img, stripe, y, s->color);
 			}
 		}

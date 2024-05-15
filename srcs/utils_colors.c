@@ -24,75 +24,52 @@ int	get_original_xy(t_data *img, t_minimap *minimap, int xy, int num)
 {
 	if (xy == 'x')
 	{
-		return ((num * img->textures[minimap->wall_or_door].width) / (180
+		return ((num * img->textures[minimap->wall_or_door].img->width) / (180
 				/ minimap->vis_width));
 	}
 	else
 	{
-		return ((num * img->textures[minimap->wall_or_door].height) / (180
+		return ((num * img->textures[minimap->wall_or_door].img->height) / (180
 				/ minimap->vis_height));
 	}
 }
 
-int get_texture_color(t_texture texture, int x, int y)
+
+#include <stdint.h>
+
+int darken_color(int color, double distance)
 {
+    int red;
+    int green;
+    int blue;
+    int alpha;
+    int darken_factor;
+    int darkened_color;
 
-	    if (texture.img == NULL) {
-        // Handle the case where texture.img is NULL
-        // For example, return a default color or report an error
-        return 0; // Replace DEFAULT_COLOR with your desired default color
-    }
-    // Access the mlx_texture_t structure within texture.img and retrieve the color
-    mlx_texture_t mlx_texture = *texture.img;
+    // Darken factor is scaled to ensure it doesn't overly darken the color
+    darken_factor = (int)(distance * 20);
 
-    // Calculate the index of the pixel in the pixel array
-    int index = (y * mlx_texture.width + x) * mlx_texture.bytes_per_pixel;
+    // Extract red, green, blue, and alpha components from the color
+    alpha = (color >> 24) & 0xFF;
+    red = (color >> 16) & 0xFF;
+    green = (color >> 8) & 0xFF;
+    blue = color & 0xFF;
 
-    // Ensure that the index is within the bounds of the pixel array
-    if (index < 0 || index >= mlx_texture.width * mlx_texture.height * mlx_texture.bytes_per_pixel) {
-        // Handle out-of-bounds access
-        // For example, return a default color or report an error
-        return 0; // Replace DEFAULT_COLOR with your desired default color
-    }
+    // Apply the darkening factor uniformly
+    red -= darken_factor;
+    green -= darken_factor;
+    blue -= darken_factor;
 
-    // Access the pixel data at the calculated index
-    uint8_t* pixel = &(mlx_texture.pixels[index]);
+    // Ensure the color components are within the valid range
+    if (red < 0) red = 0;
+    if (green < 0) green = 0;
+    if (blue < 0) blue = 0;
 
-    // Assuming RGBA pixel format (4 bytes per pixel), construct the color
-    // You may need to adjust this based on the actual pixel format
-    uint32_t color = (pixel[0] << 24) | (pixel[1] << 16) | (pixel[2] << 8) | (pixel[3]);
-
-    return color;
+    // Combine the darkened components back into a single color value
+    darkened_color = (alpha << 24) | (red << 16) | (green << 8) | blue;
+    return darkened_color;
 }
 
-
-int	darken_color(int color, double distance)
-{
-	int	red;
-	int	green;
-	int	blue;
-	int	darken_factor;
-	int	darkened_color;
-
-	darken_factor = (int)(distance * 10);
-	red = ((color >> 16) & 0xFF) - darken_factor;
-	green = ((color >> 8) & 0xFF) - darken_factor;
-	blue = (color & 0xFF) - darken_factor;
-	if (red < 0)
-		red = 0;
-	else if (red > 255)
-		red = 255;
-	if (green < 0)
-		green = 0;
-	else if (green > 255)
-		green = 255;
-	if (blue < 0)
-		blue = 0;
-	else if (blue > 255)
-		blue = 255;
-	darkened_color = (red << 16) | (green << 8) | blue;
-	return (darkened_color);
-}
 
 t_color	apply_light(t_color color, double distance)
 {
