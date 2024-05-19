@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   mlx_utils.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: lejimene <lejimene@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/03 20:13:17 by W2Wizard          #+#    #+#             */
-/*   Updated: 2024/05/07 18:24:59 by lejimene         ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   mlx_utils.c                                        :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: W2Wizard <main@w2wizard.dev>                 +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2022/01/03 20:13:17 by W2Wizard      #+#    #+#                 */
+/*   Updated: 2022/11/22 10:56:09 by jvan-hal      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ bool mlx_getline(char** out, size_t* out_size, FILE* file)
 		if (!(temp = realloc(*out, sizeof(char) * size + 1)))
 			return (false);
 		if (*out == NULL)
-			//memset(temp, '\0', size);
+			memset(temp, '\0', size);
 		temp[size] = '\0';
 
 		*out = temp;
@@ -52,7 +52,7 @@ bool mlx_getline(char** out, size_t* out_size, FILE* file)
 		strncat(*out, BUFF, size);
 		if (strrchr(BUFF, '\n'))
 			return (true);
-		//memset(BUFF, '\0', sizeof(BUFF));
+		memset(BUFF, '\0', sizeof(BUFF));
 	}
 	return (size);
 }

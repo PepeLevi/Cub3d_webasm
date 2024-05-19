@@ -17,8 +17,6 @@ int	close_program(t_data *img)
 	free_all(img);
 	mlx_delete_image(img->mlx_win, img->img);
 	mlx_terminate(img->mlx_win);
-	mlx_close_window(img->mlx_win);
-	free(img->mlx_win);
 	exit(0);
 }
 
@@ -52,12 +50,12 @@ void free_all(t_data *img)
     // Free textures
     for (i = 0; i < 23; i++)
     {
-        if (img->textures[i].img != NULL)
+        if (img->textures[i].img)
         {
             mlx_delete_texture(img->textures[i].img);
             img->textures[i].img = NULL; // Set to NULL to avoid dangling pointers
         }
-        if (img->textures[i].path != NULL)
+        if (img->textures[i].path)
         {
             free(img->textures[i].path);
             img->textures[i].path = NULL; // Set to NULL to avoid dangling pointers
@@ -67,6 +65,27 @@ void free_all(t_data *img)
     // Free sprites if applicable
     free_sprites(img->sprites);
 
+	    if (img->textures[l_F].img)
+    {
+        mlx_delete_texture(img->textures[l_F].img);
+        img->textures[l_F].img = NULL;
+    }
+    if (img->textures[l_C].img)
+    {
+        mlx_delete_texture(img->textures[l_C].img);
+        img->textures[l_C].img = NULL;
+    }
+    if (img->textures[l_MMBG].img)
+    {
+        mlx_delete_texture(img->textures[l_MMBG].img);
+        img->textures[l_MMBG].img = NULL;
+    }
+    if (img->textures[l_MMVA].img)
+    {
+        mlx_delete_texture(img->textures[l_MMVA].img);
+        img->textures[l_MMVA].img = NULL;
+    }
+	
     return;
 }
 
@@ -83,7 +102,7 @@ int	main(int argc, char **argv)
 	 keys.w = keys.s = keys.a = keys.d = keys.left = keys.right = keys.q = false;
 	img->world_map = NULL;
 	initialize_doors(img);
-	if (parse_cub_file(argv[1], img) == -1)
+	if (parse_cub_file("test.cub", img) == -1)
 		return (free_all(img), -1);
 	initialize_mlx_window(img);
 	load_textures(img);

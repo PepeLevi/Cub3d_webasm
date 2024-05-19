@@ -51,6 +51,7 @@ void	load_sprites_and_doors(t_data *img)
 
 void	load_minimap_textures(t_data *img, t_texture *bg, t_texture *va)
 {
+
 	bg->addr = NULL;
 	va->addr = NULL;
 	if (access("./images/11.png", O_RDONLY) == 0)

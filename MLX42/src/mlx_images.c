@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   mlx_images.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: lejimene <lejimene@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/28 02:29:06 by W2Wizard          #+#    #+#             */
-/*   Updated: 2024/05/07 18:25:00 by lejimene         ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   mlx_images.c                                       :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: W2Wizard <main@w2wizard.dev>                 +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2021/12/28 02:29:06 by W2Wizard      #+#    #+#                 */
+/*   Updated: 2023/03/30 16:36:39 by ntamayo-      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void mlx_flush_batch(mlx_ctx_t* mlx)
 	glDrawArrays(GL_TRIANGLES, 0, mlx->batch_size);
 
 	mlx->batch_size = 0;
-	//memset(mlx->bound_textures, 0, sizeof(mlx->bound_textures));
+	memset(mlx->bound_textures, 0, sizeof(mlx->bound_textures));
 }
 
 static int8_t mlx_bind_texture(mlx_ctx_t* mlx, mlx_image_t* img)

@@ -14,26 +14,26 @@ SOURCES = \
 	ft_printf.c print_char.c print_string.c print_nbr.c print_hex.c \
 	print_address.c print_unsigned.c toupper_printf.c \
 
-OBJECTS 	= $(SOURCES:.c=.o)
+OBJECTS = $(SOURCES:.c=.o)
 
-CC		= cc
+CC = emcc
 
-CFLAGS		= -Wall -Wextra -Werror -fPIE
+CFLAGS = -Wall -Wextra -Werror -O3
 
-all:		$(NAME)
+all: $(NAME)
 
-$(NAME):	$(OBJECTS)
-		$(AR) -r $@ $?
+$(NAME): $(OBJECTS)
+	$(AR) -r $@ $^
 
 %.o: %.c
-		$(CC) -c $(CFLAGS) $?
+	$(CC) -c $(CFLAGS) $< -o $@
 
 clean:
-		rm -f $(OBJECTS)
+	rm -f $(OBJECTS)
 
-fclean:		clean
-		rm -f $(NAME)
+fclean: clean
+	rm -f $(NAME) $(NAME:.a=.wasm) $(NAME:.a=.js)
 
-re:		fclean all
+re: fclean all
 
-.PHONY:		all bonus clean fclean re
+.PHONY: all clean fclean re

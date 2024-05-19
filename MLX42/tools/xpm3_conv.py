@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
-#                                                         :::      ::::::::    #
-#    xpm3_conv.py                                       :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: lejimene <lejimene@student.42.fr>          +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/02/09 21:04:31 by pvan-dij          #+#    #+#              #
-#    Updated: 2024/05/07 17:24:00 by lejimene         ###   ########.fr        #
+#                                                         ::::::::             #
+#    xpm3_conv.py                                       :+:    :+:             #
+#                                                      +:+                     #
+#    By: pvan-dij <pvan-dij@student.codam.nl>         +#+                      #
+#                                                    +#+                       #
+#    Created: 2022/02/09 21:04:31 by pvan-dij      #+#    #+#                  #
+#    Updated: 2022/02/23 16:48:19 by lde-la-h      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -773,9 +773,9 @@ colours = {
 
 def main():
 	if len(sys.argv) != 2:
-		print("Use: py xpmconv.py |filename.png|")
+		print("Use: py xpmconv.py |filename.xpm|")
 		exit(1)
-	if ".png" not in sys.argv[1]:
+	if ".xpm" not in sys.argv[1]:
 		print("not an xpm file")
 		exit(1)
 	with open(sys.argv[1], "r") as f:
