@@ -20,6 +20,8 @@
 # include <stdbool.h>
 # include <stdio.h>
 # include <stdlib.h>
+#include <emscripten/emscripten.h>
+#include <emscripten/html5.h>
 # include <string.h>
 
 # define WIDTH 1024
@@ -308,8 +310,8 @@ void				draw_textured_floor(t_data *param);
 // key_events.c
 int					key_release(int keycode, t_keys *keys);
 void 				key_hook(void *param);
-void 				mouse_motion(double x, double y, void *param);
-void				key_press(int keycode, t_data *img);
+int 				mouse_motion(int eventType, const EmscriptenMouseEvent *mouseEvent, void *userData);
+void 				key_press(int keycode, t_data *img);
 
 // utils_colors.c
 double				get_scale(t_minimap minimap);
@@ -334,7 +336,7 @@ void				initialize_mlx_window(t_data *img);
 void				initialize_doors(t_data *img);
 void				initialize_z_buffer(t_data *img);
 void				setup_mlx_hooks(t_data *img, t_keys *keys);
-void 				key_press_wrapper(mlx_key_data_t key_data, void *param);
+int					key_press_wrapper(int eventType, const EmscriptenKeyboardEvent *keyEvent, void *userData);
 
 // player_move.c
 void				handle_collision(t_data *img, double oldPlayerX,

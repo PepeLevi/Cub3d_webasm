@@ -11,6 +11,8 @@
 /* ************************************************************************** */
 
 # include "../includes/cub3d.h"
+#include <emscripten/emscripten.h>
+#include <emscripten/html5.h>
 
 int	close_program(t_data *img)
 {
@@ -89,14 +91,17 @@ void free_all(t_data *img)
     return;
 }
 
+// Function to run the main loop
+void emscripten_main_loop(void *param) {
+    key_hook(param);
+}
+
 
 int	main(int argc, char **argv)
 {
 	t_data	*img = malloc(sizeof(t_data));
 	t_keys	keys;
 
-	if (argc != 2)
-		return (ft_printf("Enter .cub file as argument\n"), -1);
 	keys.is_mouse_locked = 0;
 	keys.img = img;
 	 keys.w = keys.s = keys.a = keys.d = keys.left = keys.right = keys.q = false;
@@ -111,12 +116,14 @@ int	main(int argc, char **argv)
 	initialize_z_buffer(img);
 	keys.img = img;
 	img->keys = &keys;
-	mlx_key_hook(img->mlx_win, &key_press_wrapper, img); // Equivalent to mlx_hook(img->mlx_win, 2, 1L << 0, key_press, keys); // Equivalent to mlx_hook(img->mlx_win, 3, 1L << 1, key_release, keys);
-    mlx_cursor_hook(img->mlx_win, &mouse_motion, &keys); // Equivalent to mlx_hook(img->mlx_win, 6, 1L << 6, mouse_motion, keys);
-    mlx_loop_hook(img->mlx_win, &key_hook, img);
-	mlx_loop(img->mlx_win);
-	free_all(img);
-	mlx_terminate(img->mlx_win);
-	mlx_delete_image(img->mlx_win, img->img);
-	return (0);
+
+    // Set up event handlers
+    emscripten_set_keydown_callback("#canvas", img, true, (em_key_callback_func)key_press_wrapper);
+    emscripten_set_mousemove_callback("#canvas", &keys, true, (em_mouse_callback_func)mouse_motion);
+
+    // Set up the main loop
+    emscripten_set_main_loop_arg(emscripten_main_loop, img, 0, true);
+
+    // Clean up
+    free_all(img);
 }

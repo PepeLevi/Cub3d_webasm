@@ -47,16 +47,15 @@ void key_hook(void *param) {
     return;
 }
 
-void mouse_motion(double x, double y, void *param) {
-    t_keys *keys = (t_keys *)param;
+int mouse_motion(int eventType, const EmscriptenMouseEvent *mouseEvent, void *userData) {
+    t_keys *keys = (t_keys *)userData;
 
     double rotation_speed;
     double olddir_x;
     double oldplane_x;
 
-    if (y != -1 && keys->space)
-    {
-        rotation_speed = 0.0002 * (x - WIDTH / 2);
+    if (mouseEvent->clientY != -1 && keys->space) {
+        rotation_speed = 0.0002 * (mouseEvent->clientX - WIDTH / 2);
         olddir_x = keys->img->player.dir_x;
         keys->img->player.dir_x = keys->img->player.dir_x * cos(rotation_speed)
             - keys->img->player.dir_y * sin(rotation_speed);
@@ -67,8 +66,9 @@ void mouse_motion(double x, double y, void *param) {
             - keys->img->player.plane_y * sin(rotation_speed);
         keys->img->player.plane_y = oldplane_x * sin(rotation_speed)
             + keys->img->player.plane_y * cos(rotation_speed);
-        mlx_set_mouse_pos(keys->img->mlx_win, WIDTH / 2, HEIGHT / 2);
+         mlx_set_mouse_pos(keys->img->mlx_win, WIDTH / 2, HEIGHT / 2);
     }
+    return EM_TRUE;
 }
 void	key_space(t_keys *keys, t_data *img)
 {
@@ -83,13 +83,11 @@ void	key_space(t_keys *keys, t_data *img)
 }
 
 
-
-void key_press_wrapper(mlx_key_data_t key_data, void *param) {
-    int keycode = key_data.key;
-    //t_data *img = (t_data *)param;
-    key_press(keycode, (t_data *)param);
+int key_press_wrapper(int eventType, const EmscriptenKeyboardEvent *keyEvent, void *userData) {
+    t_data *img = (t_data *)userData;
+    key_press(keyEvent->keyCode, img);
+    return EM_TRUE;
 }
-
 // Adjust the signature of key_press to match mlx_keyfunc
 void key_press(int keycode, t_data *img) {
     t_keys *keys = img->keys;
@@ -112,4 +110,3 @@ void key_press(int keycode, t_data *img) {
     if (mlx_is_key_down(img->mlx_win, MLX_KEY_ESCAPE))
         close_program(img);
 }
-

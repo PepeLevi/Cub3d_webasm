@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin">
+    <meta http-equiv="Cross-Origin-Embedder-Policy" content="require-corp">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cub3D WebAssembly</title>
@@ -18,7 +20,13 @@
     </style>
 </head>
 <body>
-    <canvas id="canvas" width="800" height="600"></canvas>
+    <script>
+        if (typeof SharedArrayBuffer === 'undefined') {
+        const dummyMemory = new WebAssembly.Memory({ initial: 0, maximum: 0, shared: true })
+        globalThis.SharedArrayBuffer = dummyMemory.buffer.constructor
+        }
+    </script>
+    <canvas id="canvas" width="800" height="600" tabindex=-1></canvas>
     <script>
         var Module = {
             preRun: [],
