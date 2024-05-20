@@ -35,14 +35,14 @@ void key_hook(void *param) {
     t_data *img = param;
     t_keys *keys = img->keys;
 
-    img->tmp_img = img->img;
-    img->img = mlx_new_image(img->mlx_win, WIDTH, HEIGHT);
+    //img->tmp_img = img->img;
+   img->img = mlx_new_image(img->mlx_win, WIDTH, HEIGHT);
     handle_player_movement(keys, img);
     ////memset(img->addr, 0, WIDTH * HEIGHT * (img->bits_per_pixel / 8));
     if (cast_rays(img) == -1)
         return (free_all(img));
     update_image(img, keys);
-    mlx_delete_image(img->mlx_win, img->tmp_img);
+    mlx_delete_image(img->mlx_win, img->img);
     mlx_image_to_window(img->mlx_win, img->img, 0, 0);
     return;
 }

@@ -6,7 +6,7 @@ LIBFT = ./libft/libft.a
 MLX_PATH = MLX42/build/
 MLX_NAME = libmlx42.a
 MLX = $(MLX_PATH)$(MLX_NAME)
-LINUXFLAGS = -s USE_GLFW=3 -s USE_WEBGL2=1 -s FULL_ES3=1 -s WASM=1 -s NO_EXIT_RUNTIME=1 -s EXPORTED_RUNTIME_METHODS='["ccall", "cwrap"]' --preload-file images --preload-file test.cub --experimental-wasm-threads --experimental-wasm-bulk-memory
+LINUXFLAGS = -s USE_GLFW=3 -s USE_WEBGL2=1 -s FULL_ES3=1 -s WASM=1 -s NO_EXIT_RUNTIME=1 -s EXPORTED_RUNTIME_METHODS='["ccall", "cwrap"]' --preload-file images --preload-file test.cub --experimental-wasm-threads --experimental-wasm-bulk-memory -sALLOW_MEMORY_GROWTH 
 MLXFLAGS = -I ./includes/ -I ./mlx -I./libft -pthread
 CFILES = $(SRC)/main.c \
          $(SRC)/image.c \

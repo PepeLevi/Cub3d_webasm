@@ -91,39 +91,62 @@ void free_all(t_data *img)
     return;
 }
 
-// Function to run the main loop
-void emscripten_main_loop(void *param) {
-    key_hook(param);
-}
+void initialize(t_data **img, t_keys **keys){
 
+    *img = malloc(sizeof(t_data));
+	*keys = malloc(sizeof(t_keys));
 
-int	main(int argc, char **argv)
-{
-	t_data	*img = malloc(sizeof(t_data));
-	t_keys	keys;
+    if (!(*img) || !(*keys)) {
+        fprintf(stderr, "Memory allocation failed\n");
+        exit(EXIT_FAILURE);
+    }
 
-	keys.is_mouse_locked = 0;
-	keys.img = img;
-	 keys.w = keys.s = keys.a = keys.d = keys.left = keys.right = keys.q = false;
-	img->world_map = NULL;
-	initialize_doors(img);
-	if (parse_cub_file("test.cub", img) == -1)
-		return (free_all(img), -1);
-	initialize_mlx_window(img);
-	load_textures(img);
-	img->player.old_player_x = img->player.x;
-	img->player.old_player_y = img->player.y;
-	initialize_z_buffer(img);
-	keys.img = img;
-	img->keys = &keys;
+    (*keys)->is_mouse_locked = 0;
+    (*keys)->img = *img;
+    (*keys)->w = (*keys)->s = (*keys)->a = (*keys)->d = (*keys)->left = (*keys)->right = (*keys)->q = false;
+    (*img)->world_map = NULL;
+
+    initialize_doors(*img);
+    if (parse_cub_file("test.cub", *img) == -1) {
+        fprintf(stderr, "Failed to parse cub file\n");
+        free(*img);
+        free(*keys);
+        exit(EXIT_FAILURE);
+    }
+
+    initialize_mlx_window(*img);
+    load_textures(*img);
+
+    (*img)->player.old_player_x = (*img)->player.x;
+    (*img)->player.old_player_y = (*img)->player.y;
+    initialize_z_buffer(*img);
+    (*keys)->img = *img;
+    (*img)->keys = *keys;
 
     // Set up event handlers
     emscripten_set_keydown_callback("#canvas", img, true, (em_key_callback_func)key_press_wrapper);
     emscripten_set_mousemove_callback("#canvas", &keys, true, (em_mouse_callback_func)mouse_motion);
 
+}
+// Function to run the main loop
+void emscripten_main_loop() {
+    static t_data *img = NULL;
+    static t_keys *keys = NULL;
+
+    if (!img || !keys) {
+        initialize(&img, &keys);
+    }
+
+    key_hook(img);
+}
+
+
+int	main(int argc, char **argv)
+{
+
     // Set up the main loop
-    emscripten_set_main_loop_arg(emscripten_main_loop, img, 0, true);
+    emscripten_set_main_loop(emscripten_main_loop, 0, true);
 
     // Clean up
-    free_all(img);
+    //free_all(img);
 }

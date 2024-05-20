@@ -20,13 +20,7 @@
     </style>
 </head>
 <body>
-    <script>
-        if (typeof SharedArrayBuffer === 'undefined') {
-        const dummyMemory = new WebAssembly.Memory({ initial: 0, maximum: 0, shared: true })
-        globalThis.SharedArrayBuffer = dummyMemory.buffer.constructor
-        }
-    </script>
-    <canvas id="canvas" width="800" height="600" tabindex=-1></canvas>
+    <canvas id="canvas" width="800" height="600"></canvas>
     <script>
         var Module = {
             preRun: [],
@@ -41,6 +35,10 @@
             },
             canvas: (function() {
                 var canvas = document.getElementById('canvas');
+                var gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+                if (!gl) {
+                    console.error('Unable to initialize WebGL. Your browser may not support it.');
+                }
                 return canvas;
             })(),
             setStatus: function(text) {
