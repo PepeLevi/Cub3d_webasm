@@ -34,15 +34,14 @@ int	key_release(int keycode, t_keys *keys)
 void key_hook(void *param) {
     t_data *img = param;
     t_keys *keys = img->keys;
-
-    //img->tmp_img = img->img;
+    img->tmp_img = img->img;
    img->img = mlx_new_image(img->mlx_win, WIDTH, HEIGHT);
     handle_player_movement(keys, img);
     ////memset(img->addr, 0, WIDTH * HEIGHT * (img->bits_per_pixel / 8));
     if (cast_rays(img) == -1)
         return (free_all(img));
     update_image(img, keys);
-    mlx_delete_image(img->mlx_win, img->img);
+    mlx_delete_image(img->mlx_win, img->tmp_img);
     mlx_image_to_window(img->mlx_win, img->img, 0, 0);
     return;
 }
@@ -83,10 +82,10 @@ void	key_space(t_keys *keys, t_data *img)
 }
 
 
-int key_press_wrapper(int eventType, const EmscriptenKeyboardEvent *keyEvent, void *userData) {
+void key_press_wrapper(mlx_key_data_t keydata, void *userData) {
     t_data *img = (t_data *)userData;
-    key_press(keyEvent->keyCode, img);
-    return EM_TRUE;
+    key_press(4, img);
+    //return EM_TRUE;
 }
 // Adjust the signature of key_press to match mlx_keyfunc
 void key_press(int keycode, t_data *img) {

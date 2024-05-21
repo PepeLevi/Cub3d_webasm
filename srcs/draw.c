@@ -106,7 +106,6 @@ void draw_textured_floor(t_data *param) {
         while (floor_values.x < WIDTH) {
             calculate_floor_values(&floor_values);
             draw_floor_pixel(img, &floor_values);
-    
             if (floor_values.floor_color != 0)
                 mlx_put_pixel(img->img, floor_values.x, y, floor_values.floor_color);
             if (floor_values.ceil_color != 0)

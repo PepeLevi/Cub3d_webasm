@@ -29,7 +29,7 @@ CFILES = $(SRC)/main.c \
          $(SRC)/initialize_params.c \
          $(SRC)/draw_doors.c
 OFILES = $(CFILES:.c=.o)
-NAME = cub3d.js
+NAME = index.html
 
 all: $(NAME)
 

@@ -22,6 +22,8 @@
 # include <stdlib.h>
 #include <emscripten/emscripten.h>
 #include <emscripten/html5.h>
+#include <GL/glew.h>
+#include <GLFW/glfw3.h>
 # include <string.h>
 
 # define WIDTH 1024
@@ -42,6 +44,8 @@
 # define MAP_ERROR_4 "Error: Invalid character "
 # define RGB_ERROR_1 "Error: Invalid floor or ceiling color: "
 # define RGB_ERROR_2 "Error: Invalid RGB value: "
+
+//GLFWwindow* window;
 
 enum				e_texture_type
 {
@@ -336,7 +340,7 @@ void				initialize_mlx_window(t_data *img);
 void				initialize_doors(t_data *img);
 void				initialize_z_buffer(t_data *img);
 void				setup_mlx_hooks(t_data *img, t_keys *keys);
-int					key_press_wrapper(int eventType, const EmscriptenKeyboardEvent *keyEvent, void *userData);
+void				key_press_wrapper(mlx_key_data_t keydata, void *userData);
 
 // player_move.c
 void				handle_collision(t_data *img, double oldPlayerX,

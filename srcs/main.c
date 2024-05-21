@@ -115,8 +115,7 @@ void initialize(t_data **img, t_keys **keys){
     }
 
     initialize_mlx_window(*img);
-    load_textures(*img);
-
+    load_textures(*img);;
     (*img)->player.old_player_x = (*img)->player.x;
     (*img)->player.old_player_y = (*img)->player.y;
     initialize_z_buffer(*img);
@@ -124,8 +123,11 @@ void initialize(t_data **img, t_keys **keys){
     (*img)->keys = *keys;
 
     // Set up event handlers
-    emscripten_set_keydown_callback("#canvas", img, true, (em_key_callback_func)key_press_wrapper);
-    emscripten_set_mousemove_callback("#canvas", &keys, true, (em_mouse_callback_func)mouse_motion);
+    //emscripten_set_keydown_callback("#canvas", img, true, (em_key_callback_func)key_press_wrapper);
+    //emscripten_set_mousemove_callback("#canvas", &keys, true, (em_mouse_callback_func)mouse_motion);
+    mlx_key_hook((*img)->mlx_win, &key_press_wrapper, *img);
+    //mlx_cursor_hook((*img)->mlx_win, &mouse_motion, *img);
+    mlx_loop_hook((*img)->mlx_win, &key_hook, *img);
 
 }
 // Function to run the main loop
@@ -137,7 +139,9 @@ void emscripten_main_loop() {
         initialize(&img, &keys);
     }
 
-    key_hook(img);
+    //key_hook(img);
+
+    mlx_loop(img->mlx_win);
 }
 
 

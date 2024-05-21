@@ -81,28 +81,6 @@ void main_loop() {
 }
 
 int main() {
-    // Initialize GLFW
-    if (!glfwInit()) {
-        fprintf(stderr, "Failed to initialize GLFW\n");
-        return -1;
-    }
-
-    // Create a windowed mode window and its OpenGL context
-    window = glfwCreateWindow(640, 480, "Hello Triangle", NULL, NULL);
-    if (!window) {
-        glfwTerminate();
-        return -1;
-    }
-
-    // Make the window's context current
-    glfwMakeContextCurrent(window);
-
-    // Initialize GLEW
-    if (glewInit() != GLEW_OK) {
-        fprintf(stderr, "Failed to initialize GLEW\n");
-        return -1;
-    }
-
     // Set up the main loop using emscripten_set_main_loop
     emscripten_set_main_loop(main_loop, 0, 1);
 

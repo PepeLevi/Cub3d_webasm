@@ -23,6 +23,7 @@ static void framebuffer_callback(GLFWwindow *window, int width, int height)
 static bool mlx_create_buffers(mlx_t* mlx)
 {
 	mlx_ctx_t* mlxctx = mlx->context;
+	fprintf(stderr, "initialize then!cwwcwwwwww!\n");
 
 	mlxctx->zdepth = 0;
 	glActiveTexture(GL_TEXTURE0);
@@ -104,20 +105,17 @@ static bool mlx_init_render(mlx_t* mlx)
     uint32_t fshader = 0;
     char infolog[512] = {0};
     mlx_ctx_t* mlxctx = mlx->context;
-
     glfwMakeContextCurrent(mlx->window);
     glfwSetFramebufferSizeCallback(mlx->window, framebuffer_callback);
     glfwSetWindowUserPointer(mlx->window, mlx);
     glfwSwapInterval(MLX_SWAP_INTERVAL);
-
     // Load all OpenGL function pointers
     if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
         return (mlx_error(MLX_GLADFAIL));
-
     if (!(vshader = mlx_compile_shader(vert_shader, GL_VERTEX_SHADER)))
         return (mlx_error(MLX_VERTFAIL));
     if (!(fshader = mlx_compile_shader(frag_shader, GL_FRAGMENT_SHADER)))
-        return (mlx_error(MLX_FRAGFAIL));
+        return (mlx_error(MLX_FRAGFAIL));;
     if (!(mlxctx->shaderprogram = glCreateProgram()))
     {
         glDeleteShader(fshader);
@@ -182,6 +180,7 @@ mlx_t* mlx_init(int32_t width, int32_t height, const char* title, bool resize)
 		return (free(mlx), (void*)mlx_error(MLX_MEMFAIL));
 
 	mlx_ctx_t* const mlxctx = mlx->context;
+	mlx->window = NULL;
 	mlx->width = width;
 	mlx->height = height;
 	mlxctx->initialWidth = width;
@@ -193,11 +192,13 @@ mlx_t* mlx_init(int32_t width, int32_t height, const char* title, bool resize)
     glfwWindowHint(GLFW_RESIZABLE, resize ? GLFW_TRUE : GLFW_FALSE);
     glfwWindowHint(GLFW_DECORATED, GLFW_TRUE);
     glfwWindowHint(GLFW_VISIBLE, GLFW_TRUE);
-	if (!(mlx->window = glfwCreateWindow(width, height, title, mlx_settings[MLX_FULLSCREEN] ? glfwGetPrimaryMonitor() : NULL, NULL)))
-		return (mlx_terminate(mlx), (void*)mlx_error(MLX_WINFAIL));
+	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+	mlx->window = glfwCreateWindow(width, height, title, mlx_settings[MLX_FULLSCREEN] ? glfwGetPrimaryMonitor() : NULL, NULL);
+	if (!mlx->window) {
+        glfwTerminate();
+    }
 	if (!mlx_init_render(mlx) || !mlx_create_buffers(mlx))
 		return (mlx_terminate(mlx), NULL);
-
 	glfwMakeContextCurrent(mlx->window);
 	return (mlx);
 }
