@@ -409,8 +409,12 @@ Module.expectedDataFileDownloads++;
    "filename": "/images/wall2.png",
    "start": 31158874,
    "end": 31399525
+  }, {
+   "filename": "/test.cub",
+   "start": 31399525,
+   "end": 31400899
   } ],
-  "remote_package_size": 31399525
+  "remote_package_size": 31400899
  });
 })();
 
