@@ -43,8 +43,6 @@ void	load_sprites_and_doors(t_data *img)
 		{
 			img->textures[i].img = mlx_load_png(img->textures[i].path);
 		}
-		else
-			printf ("KEEEE\n");
 		i++;
 	}
 }

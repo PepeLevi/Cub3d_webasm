@@ -236,221 +236,185 @@ Module.expectedDataFileDownloads++;
   "files": [ {
    "filename": "/images/1.png",
    "start": 0,
-   "end": 424633
+   "end": 424660
   }, {
    "filename": "/images/11.png",
-   "start": 424633,
-   "end": 1021491
+   "start": 424660,
+   "end": 1021546
   }, {
    "filename": "/images/1c.png",
-   "start": 1021491,
-   "end": 1044457
+   "start": 1021546,
+   "end": 1044540
   }, {
    "filename": "/images/2.png",
-   "start": 1044457,
-   "end": 1188034
+   "start": 1044540,
+   "end": 1188144
   }, {
    "filename": "/images/2c.png",
-   "start": 1188034,
-   "end": 1253301
+   "start": 1188144,
+   "end": 1253439
   }, {
    "filename": "/images/3.png",
-   "start": 1253301,
-   "end": 1865720
+   "start": 1253439,
+   "end": 1865885
   }, {
    "filename": "/images/3c.png",
-   "start": 1865720,
-   "end": 1932666
+   "start": 1865885,
+   "end": 1932859
   }, {
    "filename": "/images/4.png",
-   "start": 1932666,
-   "end": 2519546
+   "start": 1932859,
+   "end": 2519766
   }, {
    "filename": "/images/42.png",
-   "start": 2519546,
-   "end": 3035901
+   "start": 2519766,
+   "end": 3036149
   }, {
    "filename": "/images/4c.png",
-   "start": 3035901,
-   "end": 3066895
+   "start": 3036149,
+   "end": 3067171
   }, {
    "filename": "/images/5.png",
-   "start": 3066895,
-   "end": 19460996
+   "start": 3067171,
+   "end": 19461299
   }, {
    "filename": "/images/5c.png",
-   "start": 19460996,
-   "end": 19555872
+   "start": 19461299,
+   "end": 19556203
   }, {
    "filename": "/images/6.png",
-   "start": 19555872,
-   "end": 24018987
+   "start": 19556203,
+   "end": 24019345
   }, {
    "filename": "/images/6c.png",
-   "start": 24018987,
-   "end": 24118724
+   "start": 24019345,
+   "end": 24119110
   }, {
    "filename": "/images/7c.png",
-   "start": 24118724,
-   "end": 24221720
+   "start": 24119110,
+   "end": 24222134
   }, {
    "filename": "/images/8c.png",
-   "start": 24221720,
-   "end": 24326770
+   "start": 24222134,
+   "end": 24327212
   }, {
    "filename": "/images/9c.png",
-   "start": 24326770,
-   "end": 24427240
+   "start": 24327212,
+   "end": 24427710
+  }, {
+   "filename": "/images/artwork.png",
+   "start": 24427710,
+   "end": 26551094
   }, {
    "filename": "/images/bicho/bicho1.png",
-   "start": 24427240,
-   "end": 24487851
-  }, {
-   "filename": "/images/bicho/bicho1.png:Zone.Identifier",
-   "start": 24487851,
-   "end": 24487851
-  }, {
-   "filename": "/images/bicho/bicho1.xpm",
-   "start": 24487851,
-   "end": 25969458
-  }, {
-   "filename": "/images/bicho/bicho1.xpm:Zone.Identifier",
-   "start": 25969458,
-   "end": 25969458
+   "start": 26551094,
+   "end": 26572032
   }, {
    "filename": "/images/bicho/bicho2.png",
-   "start": 25969458,
-   "end": 26032134
-  }, {
-   "filename": "/images/bicho/bicho2.png:Zone.Identifier",
-   "start": 26032134,
-   "end": 26032134
-  }, {
-   "filename": "/images/bicho/bicho2.xpm",
-   "start": 26032134,
-   "end": 27513789
-  }, {
-   "filename": "/images/bicho/bicho2.xpm:Zone.Identifier",
-   "start": 27513789,
-   "end": 27513789
+   "start": 26572032,
+   "end": 26593955
   }, {
    "filename": "/images/bicho/bicho3.png",
-   "start": 27513789,
-   "end": 27575698
-  }, {
-   "filename": "/images/bicho/bicho3.png:Zone.Identifier",
-   "start": 27575698,
-   "end": 27575698
-  }, {
-   "filename": "/images/bicho/bicho3.xpm",
-   "start": 27575698,
-   "end": 29057385
-  }, {
-   "filename": "/images/bicho/bicho3.xpm:Zone.Identifier",
-   "start": 29057385,
-   "end": 29057385
+   "start": 26593955,
+   "end": 26648346
   }, {
    "filename": "/images/bicho/bicho4.png",
-   "start": 29057385,
-   "end": 29115205
-  }, {
-   "filename": "/images/bicho/bicho4.png:Zone.Identifier",
-   "start": 29115205,
-   "end": 29115205
-  }, {
-   "filename": "/images/bicho/bicho4.xpm",
-   "start": 29115205,
-   "end": 30596892
-  }, {
-   "filename": "/images/bicho/bicho4.xpm:Zone.Identifier",
-   "start": 30596892,
-   "end": 30596892
+   "start": 26648346,
+   "end": 26697282
   }, {
    "filename": "/images/bicho/bicho5.png",
-   "start": 30596892,
-   "end": 30650632
+   "start": 26697282,
+   "end": 26716878
   }, {
-   "filename": "/images/bicho/bicho5.png:Zone.Identifier",
-   "start": 30650632,
-   "end": 30650632
-  }, {
-   "filename": "/images/bicho/bicho5.xpm",
-   "start": 30650632,
-   "end": 32132303
-  }, {
-   "filename": "/images/bicho/bicho5.xpm:Zone.Identifier",
-   "start": 32132303,
-   "end": 32132303
+   "filename": "/images/ceiling.png",
+   "start": 26716878,
+   "end": 26737693
   }, {
    "filename": "/images/divine.png",
-   "start": 32132303,
-   "end": 32295892
+   "start": 26737693,
+   "end": 26901314
   }, {
    "filename": "/images/door1.png",
-   "start": 32295892,
-   "end": 32861709
+   "start": 26901314,
+   "end": 27467162
   }, {
    "filename": "/images/door2.png",
-   "start": 32861709,
-   "end": 33353248
+   "start": 27467162,
+   "end": 27958732
   }, {
    "filename": "/images/door3.png",
-   "start": 33353248,
-   "end": 33797675
+   "start": 27958732,
+   "end": 28403190
   }, {
    "filename": "/images/door4.png",
-   "start": 33797675,
-   "end": 34122775
+   "start": 28403190,
+   "end": 28728321
   }, {
    "filename": "/images/door5.png",
-   "start": 34122775,
-   "end": 34309767
+   "start": 28728321,
+   "end": 28915344
   }, {
    "filename": "/images/door6.png",
-   "start": 34309767,
-   "end": 34385151
+   "start": 28915344,
+   "end": 28990759
+  }, {
+   "filename": "/images/floor.png",
+   "start": 28990759,
+   "end": 29302252
   }, {
    "filename": "/images/hbhbjhb.png",
-   "start": 34385151,
-   "end": 34525295
+   "start": 29302252,
+   "end": 29442429
   }, {
    "filename": "/images/head.png",
-   "start": 34525295,
-   "end": 34716590
+   "start": 29442429,
+   "end": 29633754
   }, {
    "filename": "/images/head2.png",
-   "start": 34716590,
-   "end": 34907670
+   "start": 29633754,
+   "end": 29824865
   }, {
    "filename": "/images/headed1.png",
-   "start": 34907670,
-   "end": 34948945
+   "start": 29824865,
+   "end": 29866173
   }, {
    "filename": "/images/headed2.png",
-   "start": 34948945,
-   "end": 34990179
+   "start": 29866173,
+   "end": 29907440
   }, {
    "filename": "/images/headedleft.png",
-   "start": 34990179,
-   "end": 35113340
+   "start": 29907440,
+   "end": 30030637
   }, {
    "filename": "/images/headedright.png",
-   "start": 35113340,
-   "end": 35235847
+   "start": 30030637,
+   "end": 30153181
   }, {
    "filename": "/images/minimap_walls.png",
-   "start": 35235847,
-   "end": 35482655
+   "start": 30153181,
+   "end": 30400028
   }, {
    "filename": "/images/system-shock-enhanced1704645748.png",
-   "start": 35482655,
-   "end": 35775105
+   "start": 30400028,
+   "end": 30692535
+  }, {
+   "filename": "/images/wall.png",
+   "start": 30692535,
+   "end": 30755682
+  }, {
+   "filename": "/images/wall1.png",
+   "start": 30755682,
+   "end": 31158874
+  }, {
+   "filename": "/images/wall2.png",
+   "start": 31158874,
+   "end": 31399525
   }, {
    "filename": "/test.cub",
-   "start": 35775105,
-   "end": 35775792
+   "start": 31399525,
+   "end": 31400899
   } ],
-  "remote_package_size": 35775792
+  "remote_package_size": 31400899
  });
 })();
 
@@ -7895,171 +7859,6 @@ var _emscripten_resize_heap = requestedSize => {
  return false;
 };
 
-var JSEvents = {
- removeAllEventListeners() {
-  while (JSEvents.eventHandlers.length) {
-   JSEvents._removeHandler(JSEvents.eventHandlers.length - 1);
-  }
-  JSEvents.deferredCalls = [];
- },
- inEventHandler: 0,
- deferredCalls: [],
- deferCall(targetFunction, precedence, argsList) {
-  function arraysHaveEqualContent(arrA, arrB) {
-   if (arrA.length != arrB.length) return false;
-   for (var i in arrA) {
-    if (arrA[i] != arrB[i]) return false;
-   }
-   return true;
-  }
-  for (var i in JSEvents.deferredCalls) {
-   var call = JSEvents.deferredCalls[i];
-   if (call.targetFunction == targetFunction && arraysHaveEqualContent(call.argsList, argsList)) {
-    return;
-   }
-  }
-  JSEvents.deferredCalls.push({
-   targetFunction: targetFunction,
-   precedence: precedence,
-   argsList: argsList
-  });
-  JSEvents.deferredCalls.sort((x, y) => x.precedence < y.precedence);
- },
- removeDeferredCalls(targetFunction) {
-  for (var i = 0; i < JSEvents.deferredCalls.length; ++i) {
-   if (JSEvents.deferredCalls[i].targetFunction == targetFunction) {
-    JSEvents.deferredCalls.splice(i, 1);
-    --i;
-   }
-  }
- },
- canPerformEventHandlerRequests() {
-  if (navigator.userActivation) {
-   return navigator.userActivation.isActive;
-  }
-  return JSEvents.inEventHandler && JSEvents.currentEventHandler.allowsDeferredCalls;
- },
- runDeferredCalls() {
-  if (!JSEvents.canPerformEventHandlerRequests()) {
-   return;
-  }
-  for (var i = 0; i < JSEvents.deferredCalls.length; ++i) {
-   var call = JSEvents.deferredCalls[i];
-   JSEvents.deferredCalls.splice(i, 1);
-   --i;
-   call.targetFunction(...call.argsList);
-  }
- },
- eventHandlers: [],
- removeAllHandlersOnTarget: (target, eventTypeString) => {
-  for (var i = 0; i < JSEvents.eventHandlers.length; ++i) {
-   if (JSEvents.eventHandlers[i].target == target && (!eventTypeString || eventTypeString == JSEvents.eventHandlers[i].eventTypeString)) {
-    JSEvents._removeHandler(i--);
-   }
-  }
- },
- _removeHandler(i) {
-  var h = JSEvents.eventHandlers[i];
-  h.target.removeEventListener(h.eventTypeString, h.eventListenerFunc, h.useCapture);
-  JSEvents.eventHandlers.splice(i, 1);
- },
- registerOrRemoveHandler(eventHandler) {
-  if (!eventHandler.target) {
-   err("registerOrRemoveHandler: the target element for event handler registration does not exist, when processing the following event handler registration:");
-   console.dir(eventHandler);
-   return -4;
-  }
-  if (eventHandler.callbackfunc) {
-   eventHandler.eventListenerFunc = function(event) {
-    ++JSEvents.inEventHandler;
-    JSEvents.currentEventHandler = eventHandler;
-    JSEvents.runDeferredCalls();
-    eventHandler.handlerFunc(event);
-    JSEvents.runDeferredCalls();
-    --JSEvents.inEventHandler;
-   };
-   eventHandler.target.addEventListener(eventHandler.eventTypeString, eventHandler.eventListenerFunc, eventHandler.useCapture);
-   JSEvents.eventHandlers.push(eventHandler);
-  } else {
-   for (var i = 0; i < JSEvents.eventHandlers.length; ++i) {
-    if (JSEvents.eventHandlers[i].target == eventHandler.target && JSEvents.eventHandlers[i].eventTypeString == eventHandler.eventTypeString) {
-     JSEvents._removeHandler(i--);
-    }
-   }
-  }
-  return 0;
- },
- getTargetThreadForEventCallback(targetThread) {
-  switch (targetThread) {
-  case 1:
-   return 0;
-
-  case 2:
-   return PThread.currentProxiedOperationCallerThread;
-
-  default:
-   return targetThread;
-  }
- },
- getNodeNameForTarget(target) {
-  if (!target) return "";
-  if (target == window) return "#window";
-  if (target == screen) return "#screen";
-  return target?.nodeName || "";
- },
- fullscreenEnabled() {
-  return document.fullscreenEnabled ||  document.webkitFullscreenEnabled;
- }
-};
-
-var maybeCStringToJsString = cString => cString > 2 ? UTF8ToString(cString) : cString;
-
-/** @type {Object} */ var specialHTMLTargets = [ 0, typeof document != "undefined" ? document : 0, typeof window != "undefined" ? window : 0 ];
-
-var findEventTarget = target => {
- target = maybeCStringToJsString(target);
- var domElement = specialHTMLTargets[target] || (typeof document != "undefined" ? document.querySelector(target) : undefined);
- return domElement;
-};
-
-var registerKeyEventCallback = (target, userData, useCapture, callbackfunc, eventTypeId, eventTypeString, targetThread) => {
- targetThread = JSEvents.getTargetThreadForEventCallback(targetThread);
- if (!JSEvents.keyEvent) JSEvents.keyEvent = _malloc(176);
- var keyEventHandlerFunc = e => {
-  assert(e);
-  var keyEventData = targetThread ? _malloc(176) : JSEvents.keyEvent;
-  GROWABLE_HEAP_F64()[((keyEventData) >> 3)] = e.timeStamp;
-  var idx = ((keyEventData) >> 2);
-  GROWABLE_HEAP_I32()[idx + 2] = e.location;
-  GROWABLE_HEAP_I32()[idx + 3] = e.ctrlKey;
-  GROWABLE_HEAP_I32()[idx + 4] = e.shiftKey;
-  GROWABLE_HEAP_I32()[idx + 5] = e.altKey;
-  GROWABLE_HEAP_I32()[idx + 6] = e.metaKey;
-  GROWABLE_HEAP_I32()[idx + 7] = e.repeat;
-  GROWABLE_HEAP_I32()[idx + 8] = e.charCode;
-  GROWABLE_HEAP_I32()[idx + 9] = e.keyCode;
-  GROWABLE_HEAP_I32()[idx + 10] = e.which;
-  stringToUTF8(e.key || "", keyEventData + 44, 32);
-  stringToUTF8(e.code || "", keyEventData + 76, 32);
-  stringToUTF8(e.char || "", keyEventData + 108, 32);
-  stringToUTF8(e.locale || "", keyEventData + 140, 32);
-  if (targetThread) __emscripten_run_callback_on_thread(targetThread, callbackfunc, eventTypeId, keyEventData, userData); else if (getWasmTableEntry(callbackfunc)(eventTypeId, keyEventData, userData)) e.preventDefault();
- };
- var eventHandler = {
-  target: findEventTarget(target),
-  eventTypeString: eventTypeString,
-  callbackfunc: callbackfunc,
-  handlerFunc: keyEventHandlerFunc,
-  useCapture: useCapture
- };
- return JSEvents.registerOrRemoveHandler(eventHandler);
-};
-
-function _emscripten_set_keydown_callback_on_thread(target, userData, useCapture, callbackfunc, targetThread) {
- if (ENVIRONMENT_IS_PTHREAD) return proxyToMainThread(6, 0, 1, target, userData, useCapture, callbackfunc, targetThread);
- return registerKeyEventCallback(target, userData, useCapture, callbackfunc, 2, "keydown", targetThread);
-}
-
 var runtimeKeepalivePop = () => {
  assert(runtimeKeepaliveCounter > 0);
  runtimeKeepaliveCounter -= 1;
@@ -8701,62 +8500,8 @@ var _emscripten_set_main_loop = (func, fps, simulateInfiniteLoop) => {
  setMainLoop(browserIterationFunc, fps, simulateInfiniteLoop);
 };
 
-var getBoundingClientRect = e => specialHTMLTargets.indexOf(e) < 0 ? e.getBoundingClientRect() : {
- "left": 0,
- "top": 0
-};
-
-var fillMouseEventData = (eventStruct, e, target) => {
- assert(eventStruct % 4 == 0);
- GROWABLE_HEAP_F64()[((eventStruct) >> 3)] = e.timeStamp;
- var idx = ((eventStruct) >> 2);
- GROWABLE_HEAP_I32()[idx + 2] = e.screenX;
- GROWABLE_HEAP_I32()[idx + 3] = e.screenY;
- GROWABLE_HEAP_I32()[idx + 4] = e.clientX;
- GROWABLE_HEAP_I32()[idx + 5] = e.clientY;
- GROWABLE_HEAP_I32()[idx + 6] = e.ctrlKey;
- GROWABLE_HEAP_I32()[idx + 7] = e.shiftKey;
- GROWABLE_HEAP_I32()[idx + 8] = e.altKey;
- GROWABLE_HEAP_I32()[idx + 9] = e.metaKey;
- GROWABLE_HEAP_I16()[idx * 2 + 20] = e.button;
- GROWABLE_HEAP_I16()[idx * 2 + 21] = e.buttons;
- GROWABLE_HEAP_I32()[idx + 11] = e["movementX"];
- GROWABLE_HEAP_I32()[idx + 12] = e["movementY"];
- var rect = getBoundingClientRect(target);
- GROWABLE_HEAP_I32()[idx + 13] = e.clientX - (rect.left | 0);
- GROWABLE_HEAP_I32()[idx + 14] = e.clientY - (rect.top | 0);
-};
-
-var registerMouseEventCallback = (target, userData, useCapture, callbackfunc, eventTypeId, eventTypeString, targetThread) => {
- targetThread = JSEvents.getTargetThreadForEventCallback(targetThread);
- if (!JSEvents.mouseEvent) JSEvents.mouseEvent = _malloc(72);
- target = findEventTarget(target);
- var mouseEventHandlerFunc = (e = event) => {
-  fillMouseEventData(JSEvents.mouseEvent, e, target);
-  if (targetThread) {
-   var mouseEventData = _malloc(72);
-   fillMouseEventData(mouseEventData, e, target);
-   __emscripten_run_callback_on_thread(targetThread, callbackfunc, eventTypeId, mouseEventData, userData);
-  } else if (getWasmTableEntry(callbackfunc)(eventTypeId, JSEvents.mouseEvent, userData)) e.preventDefault();
- };
- var eventHandler = {
-  target: target,
-  allowsDeferredCalls: eventTypeString != "mousemove" && eventTypeString != "mouseenter" && eventTypeString != "mouseleave",
-  eventTypeString: eventTypeString,
-  callbackfunc: callbackfunc,
-  handlerFunc: mouseEventHandlerFunc,
-  useCapture: useCapture
- };
- return JSEvents.registerOrRemoveHandler(eventHandler);
-};
-
-function _emscripten_set_mousemove_callback_on_thread(target, userData, useCapture, callbackfunc, targetThread) {
- if (ENVIRONMENT_IS_PTHREAD) return proxyToMainThread(7, 0, 1, target, userData, useCapture, callbackfunc, targetThread);
- return registerMouseEventCallback(target, userData, useCapture, callbackfunc, 8, "mousemove", targetThread);
-}
-
 function _fd_close(fd) {
- if (ENVIRONMENT_IS_PTHREAD) return proxyToMainThread(8, 0, 1, fd);
+ if (ENVIRONMENT_IS_PTHREAD) return proxyToMainThread(6, 0, 1, fd);
  try {
   var stream = SYSCALLS.getStreamFromFD(fd);
   FS.close(stream);
@@ -8785,7 +8530,7 @@ function _fd_close(fd) {
 };
 
 function _fd_read(fd, iov, iovcnt, pnum) {
- if (ENVIRONMENT_IS_PTHREAD) return proxyToMainThread(9, 0, 1, fd, iov, iovcnt, pnum);
+ if (ENVIRONMENT_IS_PTHREAD) return proxyToMainThread(7, 0, 1, fd, iov, iovcnt, pnum);
  try {
   var stream = SYSCALLS.getStreamFromFD(fd);
   var num = doReadv(stream, iov, iovcnt);
@@ -8798,7 +8543,7 @@ function _fd_read(fd, iov, iovcnt, pnum) {
 }
 
 function _fd_seek(fd, offset_low, offset_high, whence, newOffset) {
- if (ENVIRONMENT_IS_PTHREAD) return proxyToMainThread(10, 0, 1, fd, offset_low, offset_high, whence, newOffset);
+ if (ENVIRONMENT_IS_PTHREAD) return proxyToMainThread(8, 0, 1, fd, offset_low, offset_high, whence, newOffset);
  var offset = convertI32PairToI53Checked(offset_low, offset_high);
  try {
   if (isNaN(offset)) return 61;
@@ -8831,7 +8576,7 @@ function _fd_seek(fd, offset_low, offset_high, whence, newOffset) {
 };
 
 function _fd_write(fd, iov, iovcnt, pnum) {
- if (ENVIRONMENT_IS_PTHREAD) return proxyToMainThread(11, 0, 1, fd, iov, iovcnt, pnum);
+ if (ENVIRONMENT_IS_PTHREAD) return proxyToMainThread(9, 0, 1, fd, iov, iovcnt, pnum);
  try {
   var stream = SYSCALLS.getStreamFromFD(fd);
   var num = doWritev(stream, iov, iovcnt);
@@ -8890,7 +8635,7 @@ function _fd_write(fd, iov, iovcnt, pnum) {
 }
 
 function _emscripten_set_window_title(title) {
- if (ENVIRONMENT_IS_PTHREAD) return proxyToMainThread(12, 0, 1, title);
+ if (ENVIRONMENT_IS_PTHREAD) return proxyToMainThread(10, 0, 1, title);
  return document.title = UTF8ToString(title);
 }
 
@@ -10038,6 +9783,16 @@ var _glfwGetKey = (winid, key) => GLFW.getKey(winid, key);
 
 var _glfwGetPrimaryMonitor = () => 1;
 
+var _glfwGetTime = () => GLFW.getTime() - GLFW.initialTime;
+
+var _glfwGetWindowSize = (winid, width, height) => GLFW.getWindowSize(winid, width, height);
+
+var _glfwGetWindowUserPointer = winid => {
+ var win = GLFW.WindowFromId(winid);
+ if (!win) return 0;
+ return win.userptr;
+};
+
 var _glfwInit = () => {
  if (GLFW.windows) return 1;
  GLFW.initialTime = GLFW.getTime();
@@ -10082,7 +9837,7 @@ var _glfwInit = () => {
 
 var _glfwMakeContextCurrent = winid => {};
 
-var _glfwSetCursorPos = (winid, x, y) => GLFW.setCursorPos(winid, x, y);
+var _glfwPollEvents = () => {};
 
 var _glfwSetFramebufferSizeCallback = (winid, cbfun) => {
  var win = GLFW.WindowFromId(winid);
@@ -10092,15 +9847,15 @@ var _glfwSetFramebufferSizeCallback = (winid, cbfun) => {
  return prevcbfun;
 };
 
-var _glfwSetInputMode = (winid, mode, value) => {
- GLFW.setInputMode(winid, mode, value);
-};
+var _glfwSetKeyCallback = (winid, cbfun) => GLFW.setKeyCallback(winid, cbfun);
 
 var _glfwSetWindowUserPointer = (winid, ptr) => {
  var win = GLFW.WindowFromId(winid);
  if (!win) return;
  win.userptr = ptr;
 };
+
+var _glfwSwapBuffers = winid => GLFW.swapBuffers(winid);
 
 var _glfwSwapInterval = interval => {
  interval = Math.abs(interval);
@@ -10135,6 +9890,12 @@ var _glfwTerminate = () => {
 
 var _glfwWindowHint = (target, hint) => {
  GLFW.hints[target] = hint;
+};
+
+var _glfwWindowShouldClose = winid => {
+ var win = GLFW.WindowFromId(winid);
+ if (!win) return 0;
+ return win.shouldClose;
 };
 
 var stringToUTF8OnStack = str => {
@@ -10268,7 +10029,7 @@ var preloadedImages = {};
 
 var preloadedAudios = {};
 
-var proxiedFunctionTable = [ _proc_exit, exitOnMainThread, ___syscall_faccessat, ___syscall_fcntl64, ___syscall_ioctl, ___syscall_openat, _emscripten_set_keydown_callback_on_thread, _emscripten_set_mousemove_callback_on_thread, _fd_close, _fd_read, _fd_seek, _fd_write, _emscripten_set_window_title ];
+var proxiedFunctionTable = [ _proc_exit, exitOnMainThread, ___syscall_faccessat, ___syscall_fcntl64, ___syscall_ioctl, ___syscall_openat, _fd_close, _fd_read, _fd_seek, _fd_write, _emscripten_set_window_title ];
 
 function checkIncomingModuleAPI() {
  ignoredModuleProp("fetchSettings");
@@ -10570,9 +10331,7 @@ function assignWasmImports() {
   /** @export */ emscripten_glViewport: _emscripten_glViewport,
   /** @export */ emscripten_glWaitSync: _emscripten_glWaitSync,
   /** @export */ emscripten_resize_heap: _emscripten_resize_heap,
-  /** @export */ emscripten_set_keydown_callback_on_thread: _emscripten_set_keydown_callback_on_thread,
   /** @export */ emscripten_set_main_loop: _emscripten_set_main_loop,
-  /** @export */ emscripten_set_mousemove_callback_on_thread: _emscripten_set_mousemove_callback_on_thread,
   /** @export */ exit: _exit,
   /** @export */ fd_close: _fd_close,
   /** @export */ fd_read: _fd_read,
@@ -10581,15 +10340,20 @@ function assignWasmImports() {
   /** @export */ glfwCreateWindow: _glfwCreateWindow,
   /** @export */ glfwGetKey: _glfwGetKey,
   /** @export */ glfwGetPrimaryMonitor: _glfwGetPrimaryMonitor,
+  /** @export */ glfwGetTime: _glfwGetTime,
+  /** @export */ glfwGetWindowSize: _glfwGetWindowSize,
+  /** @export */ glfwGetWindowUserPointer: _glfwGetWindowUserPointer,
   /** @export */ glfwInit: _glfwInit,
   /** @export */ glfwMakeContextCurrent: _glfwMakeContextCurrent,
-  /** @export */ glfwSetCursorPos: _glfwSetCursorPos,
+  /** @export */ glfwPollEvents: _glfwPollEvents,
   /** @export */ glfwSetFramebufferSizeCallback: _glfwSetFramebufferSizeCallback,
-  /** @export */ glfwSetInputMode: _glfwSetInputMode,
+  /** @export */ glfwSetKeyCallback: _glfwSetKeyCallback,
   /** @export */ glfwSetWindowUserPointer: _glfwSetWindowUserPointer,
+  /** @export */ glfwSwapBuffers: _glfwSwapBuffers,
   /** @export */ glfwSwapInterval: _glfwSwapInterval,
   /** @export */ glfwTerminate: _glfwTerminate,
   /** @export */ glfwWindowHint: _glfwWindowHint,
+  /** @export */ glfwWindowShouldClose: _glfwWindowShouldClose,
   /** @export */ memory: wasmMemory
  };
 }
@@ -10607,8 +10371,6 @@ var _main = Module["_main"] = createExportWrapper("__main_argc_argv", 2);
 var __emscripten_tls_init = createExportWrapper("_emscripten_tls_init", 0);
 
 var _pthread_self = () => (_pthread_self = wasmExports["pthread_self"])();
-
-var __emscripten_run_callback_on_thread = createExportWrapper("_emscripten_run_callback_on_thread", 5);
 
 var __emscripten_thread_init = createExportWrapper("_emscripten_thread_init", 6);
 
@@ -10666,11 +10428,11 @@ Module["FS_createDataFile"] = FS.createDataFile;
 
 Module["FS_unlink"] = FS.unlink;
 
-var missingLibrarySymbols = [ "writeI53ToI64Clamped", "writeI53ToI64Signaling", "writeI53ToU64Clamped", "writeI53ToU64Signaling", "convertU32PairToI53", "getTempRet0", "setTempRet0", "isLeapYear", "ydayFromDate", "arraySum", "addDays", "inetPton4", "inetNtop4", "inetPton6", "inetNtop6", "readSockaddr", "writeSockaddr", "emscriptenLog", "readEmAsmArgs", "getExecutableName", "listenOnce", "autoResumeAudioContext", "dynCallLegacy", "getDynCaller", "dynCall", "asmjsMangle", "HandleAllocator", "getNativeTypeSize", "STACK_SIZE", "STACK_ALIGN", "POINTER_SIZE", "ASSERTIONS", "uleb128Encode", "sigToWasmTypes", "generateFuncType", "convertJsFunctionToWasm", "getEmptyTableSlot", "updateTableMap", "getFunctionAddress", "addFunction", "removeFunction", "reallyNegative", "unSign", "strLen", "reSign", "formatString", "intArrayToString", "AsciiToString", "stringToAscii", "UTF16ToString", "stringToUTF16", "lengthBytesUTF16", "UTF32ToString", "stringToUTF32", "lengthBytesUTF32", "registerWheelEventCallback", "registerUiEventCallback", "registerFocusEventCallback", "fillDeviceOrientationEventData", "registerDeviceOrientationEventCallback", "fillDeviceMotionEventData", "registerDeviceMotionEventCallback", "screenOrientation", "fillOrientationChangeEventData", "registerOrientationChangeEventCallback", "fillFullscreenChangeEventData", "registerFullscreenChangeEventCallback", "JSEvents_requestFullscreen", "JSEvents_resizeCanvasForFullscreen", "registerRestoreOldStyle", "hideEverythingExceptGivenElement", "restoreHiddenElements", "setLetterbox", "softFullscreenResizeWebGLRenderTarget", "doRequestFullscreen", "fillPointerlockChangeEventData", "registerPointerlockChangeEventCallback", "registerPointerlockErrorEventCallback", "requestPointerLock", "fillVisibilityChangeEventData", "registerVisibilityChangeEventCallback", "registerTouchEventCallback", "fillGamepadEventData", "registerGamepadEventCallback", "registerBeforeUnloadEventCallback", "fillBatteryEventData", "battery", "registerBatteryEventCallback", "setCanvasElementSizeCallingThread", "setCanvasElementSizeMainThread", "setCanvasElementSize", "getCanvasSizeCallingThread", "getCanvasSizeMainThread", "getCanvasElementSize", "jsStackTrace", "getCallstack", "convertPCtoSourceLocation", "getEnvStrings", "checkWasiClock", "wasiRightsToMuslOFlags", "wasiOFlagsToMuslOFlags", "createDyncallWrapper", "setImmediateWrapped", "clearImmediateWrapped", "polyfillSetImmediate", "getPromise", "makePromise", "idsToPromises", "makePromiseCallback", "ExceptionInfo", "findMatchingCatch", "Browser_asyncPrepareDataCounter", "getSocketFromFD", "getSocketAddress", "FS_mkdirTree", "_setNetworkCallback", "writeGLArray", "emscripten_webgl_destroy_context_before_on_calling_thread", "registerWebGlEventCallback", "runAndAbortIfError", "ALLOC_NORMAL", "ALLOC_STACK", "allocate", "writeStringToMemory", "writeAsciiToMemory", "setErrNo", "demangle", "stackTrace" ];
+var missingLibrarySymbols = [ "writeI53ToI64Clamped", "writeI53ToI64Signaling", "writeI53ToU64Clamped", "writeI53ToU64Signaling", "convertU32PairToI53", "getTempRet0", "setTempRet0", "isLeapYear", "ydayFromDate", "arraySum", "addDays", "inetPton4", "inetNtop4", "inetPton6", "inetNtop6", "readSockaddr", "writeSockaddr", "emscriptenLog", "readEmAsmArgs", "getExecutableName", "listenOnce", "autoResumeAudioContext", "dynCallLegacy", "getDynCaller", "dynCall", "asmjsMangle", "HandleAllocator", "getNativeTypeSize", "STACK_SIZE", "STACK_ALIGN", "POINTER_SIZE", "ASSERTIONS", "uleb128Encode", "sigToWasmTypes", "generateFuncType", "convertJsFunctionToWasm", "getEmptyTableSlot", "updateTableMap", "getFunctionAddress", "addFunction", "removeFunction", "reallyNegative", "unSign", "strLen", "reSign", "formatString", "intArrayToString", "AsciiToString", "stringToAscii", "UTF16ToString", "stringToUTF16", "lengthBytesUTF16", "UTF32ToString", "stringToUTF32", "lengthBytesUTF32", "registerKeyEventCallback", "maybeCStringToJsString", "findEventTarget", "getBoundingClientRect", "fillMouseEventData", "registerMouseEventCallback", "registerWheelEventCallback", "registerUiEventCallback", "registerFocusEventCallback", "fillDeviceOrientationEventData", "registerDeviceOrientationEventCallback", "fillDeviceMotionEventData", "registerDeviceMotionEventCallback", "screenOrientation", "fillOrientationChangeEventData", "registerOrientationChangeEventCallback", "fillFullscreenChangeEventData", "registerFullscreenChangeEventCallback", "JSEvents_requestFullscreen", "JSEvents_resizeCanvasForFullscreen", "registerRestoreOldStyle", "hideEverythingExceptGivenElement", "restoreHiddenElements", "setLetterbox", "softFullscreenResizeWebGLRenderTarget", "doRequestFullscreen", "fillPointerlockChangeEventData", "registerPointerlockChangeEventCallback", "registerPointerlockErrorEventCallback", "requestPointerLock", "fillVisibilityChangeEventData", "registerVisibilityChangeEventCallback", "registerTouchEventCallback", "fillGamepadEventData", "registerGamepadEventCallback", "registerBeforeUnloadEventCallback", "fillBatteryEventData", "battery", "registerBatteryEventCallback", "setCanvasElementSizeCallingThread", "setCanvasElementSizeMainThread", "setCanvasElementSize", "getCanvasSizeCallingThread", "getCanvasSizeMainThread", "getCanvasElementSize", "jsStackTrace", "getCallstack", "convertPCtoSourceLocation", "getEnvStrings", "checkWasiClock", "wasiRightsToMuslOFlags", "wasiOFlagsToMuslOFlags", "createDyncallWrapper", "setImmediateWrapped", "clearImmediateWrapped", "polyfillSetImmediate", "getPromise", "makePromise", "idsToPromises", "makePromiseCallback", "ExceptionInfo", "findMatchingCatch", "Browser_asyncPrepareDataCounter", "getSocketFromFD", "getSocketAddress", "FS_mkdirTree", "_setNetworkCallback", "writeGLArray", "emscripten_webgl_destroy_context_before_on_calling_thread", "registerWebGlEventCallback", "runAndAbortIfError", "ALLOC_NORMAL", "ALLOC_STACK", "allocate", "writeStringToMemory", "writeAsciiToMemory", "setErrNo", "demangle", "stackTrace" ];
 
 missingLibrarySymbols.forEach(missingLibrarySymbol);
 
-var unexportedSymbols = [ "run", "addOnPreRun", "addOnInit", "addOnPreMain", "addOnExit", "addOnPostRun", "FS_createFolder", "FS_createLink", "FS_readFile", "out", "err", "callMain", "abort", "wasmMemory", "wasmExports", "GROWABLE_HEAP_I8", "GROWABLE_HEAP_U8", "GROWABLE_HEAP_I16", "GROWABLE_HEAP_U16", "GROWABLE_HEAP_I32", "GROWABLE_HEAP_U32", "GROWABLE_HEAP_F32", "GROWABLE_HEAP_F64", "writeStackCookie", "checkStackCookie", "writeI53ToI64", "readI53FromI64", "readI53FromU64", "convertI32PairToI53", "convertI32PairToI53Checked", "stackSave", "stackRestore", "stackAlloc", "ptrToString", "zeroMemory", "exitJS", "getHeapMax", "growMemory", "ENV", "MONTH_DAYS_REGULAR", "MONTH_DAYS_LEAP", "MONTH_DAYS_REGULAR_CUMULATIVE", "MONTH_DAYS_LEAP_CUMULATIVE", "ERRNO_CODES", "ERRNO_MESSAGES", "DNS", "Protocols", "Sockets", "initRandomFill", "randomFill", "timers", "warnOnce", "readEmAsmArgsArray", "jstoi_q", "jstoi_s", "handleException", "keepRuntimeAlive", "runtimeKeepalivePush", "runtimeKeepalivePop", "callUserCallback", "maybeExit", "asyncLoad", "alignMemory", "mmapAlloc", "wasmTable", "noExitRuntime", "getCFunc", "freeTableIndexes", "functionsInTableMap", "setValue", "getValue", "PATH", "PATH_FS", "UTF8Decoder", "UTF8ArrayToString", "UTF8ToString", "stringToUTF8Array", "stringToUTF8", "lengthBytesUTF8", "intArrayFromString", "UTF16Decoder", "stringToNewUTF8", "stringToUTF8OnStack", "writeArrayToMemory", "JSEvents", "registerKeyEventCallback", "specialHTMLTargets", "maybeCStringToJsString", "findEventTarget", "findCanvasEventTarget", "getBoundingClientRect", "fillMouseEventData", "registerMouseEventCallback", "currentFullscreenStrategy", "restoreOldWindowedStyle", "UNWIND_CACHE", "ExitStatus", "doReadv", "doWritev", "safeSetTimeout", "promiseMap", "uncaughtExceptionCount", "exceptionLast", "exceptionCaught", "Browser", "setMainLoop", "getPreloadedImageData__data", "wget", "SYSCALLS", "preloadPlugins", "FS_modeStringToFlags", "FS_getMode", "FS_stdin_getChar_buffer", "FS_stdin_getChar", "FS", "MEMFS", "TTY", "PIPEFS", "SOCKFS", "tempFixedLengthArray", "miniTempWebGLFloatBuffers", "miniTempWebGLIntBuffers", "heapObjectForWebGLType", "toTypedArrayIndex", "webgl_enable_ANGLE_instanced_arrays", "webgl_enable_OES_vertex_array_object", "webgl_enable_WEBGL_draw_buffers", "webgl_enable_WEBGL_multi_draw", "GL", "emscriptenWebGLGet", "computeUnpackAlignedImageSize", "colorChannelsInGlTextureFormat", "emscriptenWebGLGetTexPixelData", "emscriptenWebGLGetUniform", "webglGetUniformLocation", "webglPrepareUniformLocationsBeforeFirstUse", "webglGetLeftBracePos", "emscriptenWebGLGetVertexAttrib", "__glGetActiveAttribOrUniform", "emscriptenWebGLGetBufferBinding", "emscriptenWebGLValidateMapBufferTarget", "AL", "GLUT", "EGL", "GLEW", "IDBStore", "SDL", "SDL_gfx", "GLFW_Window", "GLFW", "emscriptenWebGLGetIndexed", "webgl_enable_WEBGL_draw_instanced_base_vertex_base_instance", "webgl_enable_WEBGL_multi_draw_instanced_base_vertex_base_instance", "allocateUTF8", "allocateUTF8OnStack", "PThread", "terminateWorker", "killThread", "cleanupThread", "registerTLSInit", "cancelThread", "spawnThread", "exitOnMainThread", "proxyToMainThread", "proxiedJSCallArgs", "invokeEntryPoint", "checkMailbox" ];
+var unexportedSymbols = [ "run", "addOnPreRun", "addOnInit", "addOnPreMain", "addOnExit", "addOnPostRun", "FS_createFolder", "FS_createLink", "FS_readFile", "out", "err", "callMain", "abort", "wasmMemory", "wasmExports", "GROWABLE_HEAP_I8", "GROWABLE_HEAP_U8", "GROWABLE_HEAP_I16", "GROWABLE_HEAP_U16", "GROWABLE_HEAP_I32", "GROWABLE_HEAP_U32", "GROWABLE_HEAP_F32", "GROWABLE_HEAP_F64", "writeStackCookie", "checkStackCookie", "writeI53ToI64", "readI53FromI64", "readI53FromU64", "convertI32PairToI53", "convertI32PairToI53Checked", "stackSave", "stackRestore", "stackAlloc", "ptrToString", "zeroMemory", "exitJS", "getHeapMax", "growMemory", "ENV", "MONTH_DAYS_REGULAR", "MONTH_DAYS_LEAP", "MONTH_DAYS_REGULAR_CUMULATIVE", "MONTH_DAYS_LEAP_CUMULATIVE", "ERRNO_CODES", "ERRNO_MESSAGES", "DNS", "Protocols", "Sockets", "initRandomFill", "randomFill", "timers", "warnOnce", "readEmAsmArgsArray", "jstoi_q", "jstoi_s", "handleException", "keepRuntimeAlive", "runtimeKeepalivePush", "runtimeKeepalivePop", "callUserCallback", "maybeExit", "asyncLoad", "alignMemory", "mmapAlloc", "wasmTable", "noExitRuntime", "getCFunc", "freeTableIndexes", "functionsInTableMap", "setValue", "getValue", "PATH", "PATH_FS", "UTF8Decoder", "UTF8ArrayToString", "UTF8ToString", "stringToUTF8Array", "stringToUTF8", "lengthBytesUTF8", "intArrayFromString", "UTF16Decoder", "stringToNewUTF8", "stringToUTF8OnStack", "writeArrayToMemory", "JSEvents", "specialHTMLTargets", "findCanvasEventTarget", "currentFullscreenStrategy", "restoreOldWindowedStyle", "UNWIND_CACHE", "ExitStatus", "doReadv", "doWritev", "safeSetTimeout", "promiseMap", "uncaughtExceptionCount", "exceptionLast", "exceptionCaught", "Browser", "setMainLoop", "getPreloadedImageData__data", "wget", "SYSCALLS", "preloadPlugins", "FS_modeStringToFlags", "FS_getMode", "FS_stdin_getChar_buffer", "FS_stdin_getChar", "FS", "MEMFS", "TTY", "PIPEFS", "SOCKFS", "tempFixedLengthArray", "miniTempWebGLFloatBuffers", "miniTempWebGLIntBuffers", "heapObjectForWebGLType", "toTypedArrayIndex", "webgl_enable_ANGLE_instanced_arrays", "webgl_enable_OES_vertex_array_object", "webgl_enable_WEBGL_draw_buffers", "webgl_enable_WEBGL_multi_draw", "GL", "emscriptenWebGLGet", "computeUnpackAlignedImageSize", "colorChannelsInGlTextureFormat", "emscriptenWebGLGetTexPixelData", "emscriptenWebGLGetUniform", "webglGetUniformLocation", "webglPrepareUniformLocationsBeforeFirstUse", "webglGetLeftBracePos", "emscriptenWebGLGetVertexAttrib", "__glGetActiveAttribOrUniform", "emscriptenWebGLGetBufferBinding", "emscriptenWebGLValidateMapBufferTarget", "AL", "GLUT", "EGL", "GLEW", "IDBStore", "SDL", "SDL_gfx", "GLFW_Window", "GLFW", "emscriptenWebGLGetIndexed", "webgl_enable_WEBGL_draw_instanced_base_vertex_base_instance", "webgl_enable_WEBGL_multi_draw_instanced_base_vertex_base_instance", "allocateUTF8", "allocateUTF8OnStack", "PThread", "terminateWorker", "killThread", "cleanupThread", "registerTLSInit", "cancelThread", "spawnThread", "exitOnMainThread", "proxyToMainThread", "proxiedJSCallArgs", "invokeEntryPoint", "checkMailbox" ];
 
 unexportedSymbols.forEach(unexportedRuntimeSymbol);
 

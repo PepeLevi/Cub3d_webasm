@@ -97,15 +97,10 @@ void key_press(int keycode, t_data *img) {
     keys->a = mlx_is_key_down(img->mlx_win, MLX_KEY_A);
     keys->d = mlx_is_key_down(img->mlx_win, MLX_KEY_D);
     keys->left = mlx_is_key_down(img->mlx_win, MLX_KEY_LEFT);
-    keys->right = mlx_is_key_down(img->mlx_win, MLX_KEY_RIGHT);
-    
-    if (mlx_is_key_down(img->mlx_win, MLX_KEY_SPACE))
-        key_space(keys, img);
+    keys->right = mlx_is_key_down(img->mlx_win, MLX_KEY_RIGHT); 
     
     keys->q = mlx_is_key_down(img->mlx_win, MLX_KEY_Q);
     if (keys->q && img->world_map[(int)img->player.y][(int)img->player.x] != 2)
         img->doors.is_open = !img->doors.is_open;
     
-    if (mlx_is_key_down(img->mlx_win, MLX_KEY_ESCAPE))
-        close_program(img);
 }
