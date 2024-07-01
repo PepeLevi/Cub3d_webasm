@@ -17,9 +17,16 @@
             width: 1024px;
             height: 720px;
         }
-        .big-q {
+        .instructions {
+            width: 300px;
+            display: flex;
+            color: white;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .load {
             font-family: Georgia, serif; /* Example system font with serif fallback */
-            font-size: 100px;  /* Adjust font size as needed */
+            font-size: 50px;  /* Adjust font size as needed */
             color: white;
             position: absolute;  /* Position the Q below the canvas */
             bottom: -50px;  /* Adjust bottom positioning as needed */
@@ -31,13 +38,22 @@
 <body>
     <script src="coi-serviceworker.js"></script>
     <canvas id="canvas"></canvas>
-    <span class="big-q">Q</span>
+    <div class="instructions">
+        <div class="instruction-item">Use <strong>W, A, S, D</strong> to move</div>
+        <div class="instruction-item">Use arrow keys to rotate</div>
+        <div class="instruction-item">Press <strong>Q</strong> for ???</div>
+    </div>
+    <span class="load">Loading...</span>
     <script>
         // Emscripten module configuration
         var Module = {
             onRuntimeInitialized: function() {
                 // This is called when the Emscripten module is ready
                 console.log("Emscripten module initialized");
+
+                // Hide loading text when canvas is fully loaded
+                var loadingText = document.querySelector('.load');
+                loadingText.style.display = 'none';
             },
             canvas: (function() {
                 var canvas = document.getElementById('canvas');
